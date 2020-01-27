@@ -1,0 +1,187 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+
+}
+ .container {
+    margin-left: auto;
+    margin-right: auto;
+}
+/*menu barra*/
+header.row.blanco {
+    margin-top: 40px;
+}
+
+a.navbar-brand{
+    margin-left: 30px;
+
+}
+div.collapse ul li{
+    margin-left: 30px;
+  }
+.dropdown-item:hover{
+background-color:#68ECA3;
+}
+button p{
+    text-align: justify;
+}
+.dropdown-item{
+    color: white;
+}
+.divisor{
+    background-color: white;
+    width: 80%;
+    }
+.list-group{
+    margin-top: 20px;
+}
+.btn{
+    background: #68ECA3;
+    border: 2px solid #68ECA3;
+}
+/*cuerpo*/
+.card .card-header{
+background-color: white;
+border-bottom: 1px solid white;
+}
+.question{
+    background: white;
+    border: white;
+}
+.btn-link{
+    color: black;
+}
+.card{
+    border: 1px solid white;
+
+}
+
+.encabezado{
+    margin-top: 5%;
+}
+
+#map-goo {
+    width: 100%;
+}
+form p label{
+    display: block
+}
+form input{
+    width: 100%;
+}
+.texcontenido{
+    text-align: justify;
+}
+#val{
+    width: 455px;
+}
+#prov{
+    width: 100%;
+}
+#submit{
+    background: transparent;
+    color: #68ECA3;
+    border: 2px solid #68ECA3;
+    border-radius: 6px;
+    height: 40px;
+    margin-top: 10px;
+}
+#submit:hover{
+    background-color: #68ECA3;
+    color: white;
+}
+.contenidofaq{
+    margin-top:120px;
+}
+.titulo-faq{
+    margin-top: 2%;
+}
+.banner-comprar img{
+    width: 491px;
+    height: 46px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.banner-mdp img{
+    width: 491px;
+    height: 46px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+section {
+    text-align: justify;
+    margin: 15px;
+}
+
+main section a{
+    text-decoration: none;
+    color: black;
+}
+
+main section a:hover{
+    font-weight: 600;
+    color:black
+}
+
+.linkcorreo{
+    color: blue;
+}
+.linkcorreo:hover{
+    color:blue;
+}
+
+
+/*footer*/
+footer {
+    margin-top: 100px;
+    border-top: 1px dotted #a0a0a0;
+}
+/*media query*/
+@media screen and (max-width: 768px) {
+
+#barr {
+    display: none;
+}
+.barra-menu {
+    display: block;
+
+}
+#mi-carrito {
+    display: none;
+
+}
+#chango {
+    display: none;
+}
+
+.log-reg ul{
+    display: none;
+ }
+.texcontenido{
+    width: 80%;
+    margin-left: 10%;
+}
+h3{
+    margin-left: 10%;
+}
+ #val{
+     width: 400px;
+ }
+ div.buscador{
+     width: 100%;
+ }
+ div.formulario{
+     width: 80%;
+     margin-left: 10%;
+ }
+
+}
+@media screen and (max-width:576px){
+    #val{
+        width: 400px;
+    }
+}

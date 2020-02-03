@@ -1,0 +1,174 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+
+}
+ .container {
+    margin-left: auto;
+    margin-right: auto;
+}
+/*menu barra*/
+header.row.blanco {
+    margin-top: 40px;
+}
+
+a.navbar-brand{
+    margin-left: 30px;
+
+}
+div.collapse ul li{
+    margin-left: 30px;
+  }
+.dropdown-item:hover{
+background-color:#68ECA3;
+}
+.dropdown-item{
+    color: white;
+}
+.divisor{
+    background-color: white;
+    width: 80%;
+    }
+.btn{
+    background: #68ECA3;
+    border: 2px solid #68ECA3;
+}
+.list-group{
+    margin-top: 20px;
+}
+/*section h3{
+    font-size: 15px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+    height: 30px;;
+}*/
+/*cuerpo iniciar sesión*/
+textarea{
+    width: 100%;
+}
+.encabezado{
+    margin-top: 5%;
+}
+.row-login{
+    margin-top: 5%;
+}
+form p label{
+    display: block
+}
+form input{
+    width: 100%;
+}
+.cart-empty{
+    margin-top: 120px;
+}
+.carttitle{
+    font-size: 30px;
+    text-align: center;
+}
+.parrafos{
+    text-align: center;
+}
+ .imgcart{
+     width: 25%;
+     margin-left: 38%;
+ }
+#submit{
+    background: transparent;
+    color: #68ECA3;
+    border: 2px solid #68ECA3;
+    border-radius: 6px;
+    height: 40px;
+    margin-top: 10px;
+    vertical-align: top;
+
+}
+#submit:hover{
+    background-color: #68ECA3;
+    color: white;
+}
+.form-check-input{
+    width: 60%;
+}
+
+
+#prov{
+    width: 100%;
+}
+/*footer*/
+footer {
+    margin-top: 100px;
+    border-top: 1px dotted #a0a0a0;
+}
+
+.contraseñaolv{
+    text-decoration: underline;
+    color: black;
+    opacity: 0.9;
+    text-align: center;
+}
+
+input.recordarme{
+    display: flex;
+    text-align: justify;
+    width: 450px;
+    float: right;
+    margin-top: 7px;
+}
+.barra-menu {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    #barr {
+        display: none;
+    }
+    .texcontenido{
+        width: 80%;
+        margin-left: 10%;
+    }
+    h3{
+        margin-left: 10%;
+    }
+     #val{
+         width: 400px;
+     }
+     div.buscador{
+         width: 100%;
+     }
+
+    .barra-menu {
+        display: block;
+
+    }
+    #mi-carrito {
+    display: none;
+    }
+    #chango {
+        display: none;
+    }
+
+.log-reg ul{
+    display: none;
+ }
+ div.formulario{
+     width: 80%;
+     margin-left: 10%;
+ }
+ input.recordarme{
+    width: 240px;
+    float: right
+ }
+ }
+ @media screen and (max-width:576px){
+    #val{
+        width: 400px;
+    }
+    input.recordarme{
+        width: 421px;
+    }
+}

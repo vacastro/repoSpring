@@ -1,0 +1,166 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+
+}
+ .container {
+    margin-left: auto;
+    margin-right: auto;
+}
+/*menu barra*/
+header.row.blanco {
+    margin-top: 40px;
+}
+.divisor{
+    background-color: white;
+    width: 80%;
+    }
+
+}
+a.navbar-brand{
+    margin-left: 30px;
+
+}
+div.collapse ul li{
+    margin-left: 30px;
+  }
+.dropdown-item:hover{
+background-color:#68ECA3;
+}
+.dropdown-item{
+    color: white;
+}
+.list-group{
+    margin-top: 20px;
+}
+/*seccion productos*/
+h4{
+    background-color: black;
+    color: white;
+    margin-top:30px;
+    text-align: center;
+    padding: 4px;
+}
+.products{
+    margin-top:90px;
+}
+.card{
+    float: left;
+}
+/*sin efecto - eliminar??*/
+/*aside.categorias{
+    margin-top: 30px;
+    border: 1px solid rgba(0,0,0,.125);
+}
+aside.categorias ul li{
+    list-style-type: none;
+
+}
+aside.categorias ul li a{
+       color: grey;
+
+}
+h2.titulo-categorias{
+    text-align: center;
+    margin-top: 20px;
+}
+ul.menu-cat li{
+    margin: 5px;
+}
+article.producto{
+    overflow: hidden;
+    width: 30%;
+    float: left;
+    margin-top: 20px;
+    margin-left: 2.5%;
+    height: 350px;
+}
+article.producto img:hover{
+    filter: grayscale(80%);
+}
+article.producto img{
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+    margin-left: 45px;
+    margin-bottom: 18px;
+}
+article.producto span{
+    margin-left: 40px;
+    margin-right: 30px;
+    font-size: 12px;
+
+}
+article.producto a{
+    text-decoration: none;
+    background: #68ECA3;
+    width: 85px;
+    height: 25px;
+    border-radius:5px;
+    color: white;
+    border: 2px solid #68ECA3;
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;
+    margin-left: 105px;
+}
+article.producto a:hover{
+    background: transparent;
+    color: #68ECA3;
+}*/
+
+/*productos*/
+.card{
+    margin: 30px;
+}
+.btn{
+    background: #68ECA3;
+    border: 2px solid #68ECA3;
+}
+/*footer*/
+footer {
+    margin-top: 100px;
+    border-top: 1px dotted #a0a0a0;
+}
+
+
+/*media query*/
+@media screen and (max-width: 768px) {
+
+ aside {
+            display: none;
+}
+#barr {
+    display: none;
+}
+
+.barra-menu {
+    display: block;
+
+}
+#submit {
+display: none;
+}
+#chango {
+    display: none;
+}
+
+.log-reg ul li a{
+    display: none;
+
+ }
+ div.buscador input {
+     width: 80%;
+ }
+
+ .log-reg ul{
+    display: none;
+ }
+ article.producto span{
+     font-size: 11px;
+ }
+    }

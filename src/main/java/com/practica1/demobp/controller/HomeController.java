@@ -8,40 +8,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class HomeController {
 	
-	@RequestMapping("")
+	@GetMapping("")
 	
 	public String getIndex() {
 		return "index";
 	}
 	
-	@RequestMapping("login")
+	@GetMapping("login")
 	
 	public String getLogin() {
 		return "login";
 	}
 	
 
-	@RequestMapping("carrito")
+	@GetMapping("carrito")
     public String getCarrito(){
         return "carrito";
     }
     
-	@RequestMapping("faq")
+	@GetMapping("faq")
     public String getFaq(){
         return "faq";
     }
     
-	@RequestMapping("nosotros")
+	@GetMapping("nosotros")
     public String getNosotros(){
         return "nosotros";
     }
     
-	@RequestMapping("registro")
+	@GetMapping("registro")
     public String getRegistro(){
     return "registro";
     }
     
-	@RequestMapping("productos")
+	@GetMapping("productos")
     public String getProductos(){
     return "productos";
     }

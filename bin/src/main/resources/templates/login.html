@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style2.css">
-    <script src="javascript/validacion.js"></script>
+    <link rel="stylesheet" href="style2.css">
+    <script src="validacionlog.js"></script>
     <title>Wabi-Sabi Deco</title>
 </head>
 <body>
 <header>
     <div class="row">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <img src="imagenes/logo-sucu-blanco.png" alt="logo" style="width:40px;height:40px;">
+            <img src="imagenes/logo-sucu-blanco.png" alt="" style="width:40px;height:40px;">
             <a class="navbar-brand" href="index">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -59,7 +58,7 @@
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Buscar producto" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    <button  class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                 </form>
             </div>
         </nav>
@@ -68,78 +67,43 @@
 <section>
     <div class="encabezado"style="margin-top:120px;">
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb" style="background-color: #68ECA3 ;margin-bottom: 50px;">
+            <ol class="breadcrumb" style="background-color: #68ECA3 ;">
                 <li class="breadcrumb-item"><a href="index" style="color: #199c6a;" >Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page" style="color: #343a40;" >Registro</li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: #343a40;" >Iniciar Sesión</li>
             </ol>
         </nav>
     </div>
-    <div class="row">
+    <div class="row-login">
         <div class="formulario offset-md-3 col-md-6">
             <form action="validar.php" method="POST">
                 <p>
-                    <label for="nombre">Nombre</label>
-                    <input id="nombre" type="text" name="nombre" placeholder="Ingrese su nombre completo aquí..">
-                    <span style="color: #ffa81c; font-size: 11px;" class="errorNombre" ></span>
-                </p>
-                <p>
                     <label for="email">E-Mail:</label>
-                    <input id="email" type="email" name="email" value="" placeholder="ejemplo: usuario@ejemplo.com" required!>
+                    <input id="email" type="email" name="email" value="" placeholder=" ejemplo: usuario@ejemplo.com"  required!>
                     <span style="color: #ffa81c; font-size: 11px;" class="errorEmail" ></span>
                 </p>
-                <p>
-                    <label for="telefono">Teléfono:</label>
-                    <input id="telefono" type="text" pattern="^[0-9]*$" name="telefono" placeholder="código de área sin 0 y sin 15">
-                    <span style="color: #ffa81c; font-size: 11px;" class="errorTelefono" ></span>
-                </p>
-                <p>
-                    Provincia:
-                    <select name="" id="prov">
-                        <option value="">Selecciona una opción</option>
-                    </select>
-                    <span style="color: #ffa81c; font-size: 11px;" class="errorProv" ></span>
-                </p>
-                <p>
-                    <label for="FechaNac">Fecha de Nacimiento:</label>
-                    <input id="fechaNacimiento" type="date" name="FechaNac" min="1930-01-01" max="2019-01-02" step="2" value="">
-                    <span style="color: #ffa81c; font-size: 11px;" class="errorFechaNac" ></span>
-                </p>
-                <span>
-                        <label for="Sexo">Sexo</label>
-                        <br>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="Sexo" id="femenino" value="F" >
-
-                            <label class="form-check-label" for="femenino">
-                                Femenino
-                            </label>
-                            </div>
-                            <div class="form-check">
-                            <input class="form-check-input" type="radio" name="Sexo" id="masculino" value="M">
-
-                            <label class="form-check-label" for="masculino">
-                                Masculino
-                            </label>
-                            <br>
-                            <span style="color: #ffa81c; font-size: 11px;" class="errorSexo" ></span>
-                            </div>
-                    <br>
-                    <br>
-                    </span>
 
                 <p>
                     <label for="contraseña">Contraseña:</label>
                     <input id="password" type="password" name="contraseña" placeholder="Ingrese la contraseña">
-                    <span style="color: #ffa81c; font-size: 11px;" class="errorContrasenia2" ></span>
-                </p>
-                <p>
-                    <label for="confir pass">Confirmar Contraseña:</label>
-                    <input id="password_confirm" type="password" name="confir pass" placeholder="Confirme la contraseña">
                     <span style="color: #ffa81c; font-size: 11px;" class="errorContrasenia" ></span>
+
                 </p>
+                <!--<p>
+                    <label for="Recordarme"></label>
+                   Recordarme<input class="recordarme" type="checkbox" name="Recordarme" value="R">
+
+                </p>-->
+
                 <p>
-                    <input id="submit" type="button" value="Enviar">
-                    <!--<button type="button" class="Registrarme">Registrarme!</button>-->
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+                </div>
+                <input id="submit" type="button"  value="Iniciar sesión">
+                <br>
+                <br>
+
+                <a class="contraseñaolv" href="#">Olvidé mi contraseña</a>
                 </p>
             </form>
         </div>
@@ -184,15 +148,14 @@
                 <li>ENTERATE LAS ÚLTIMAS NOVEDADES</li>
                 <li><form>
                     <div class="form-group row">
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Ingrese email">
-                                <span style="color: #ffa81c; font-size: 11px;" class="errorSusc" ></span>
-                            </div>
-                            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm" style="padding:0px;" >
-                                <button id="suscribe" type="submit" style="background: #68ECA3;border: 2px solid #68ECA3;" ><img src="imagenes/send-footer.png" style="width: 20px;height: 20px;" alt="avion-papel"></button>
-                            </label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Ingrese email">
+                            <span style="color: #ffa81c; font-size: 11px;" class="errorSusc" ></span>
                         </div>
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm" style="padding:0px;" >
+                            <button id="suscribe" type="submit" style="background: #68ECA3;border: 2px solid #68ECA3;" ><img src="imagenes/send-footer.png" style="width: 20px;height: 20px;" alt="avion-papel"></button>
+                        </label>
+                    </div>
                 </form></li>
             </ul>
         </div>
@@ -202,62 +165,61 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
-              window.addEventListener('load', function(){
+                      window.addEventListener('load', function(){
 
-                        //detectar cuando toco el boton de contacto (se envía el formulario)
-                         var botonSuscribirse = document.getElementById("suscribe");
-                         botonSuscribirse.addEventListener('click',function(){
+                                //detectar cuando toco el boton de contacto (se envía el formulario)
+                                 var botonSuscribirse = document.getElementById("suscribe");
+                                 botonSuscribirse.addEventListener('click',function(){
 
-                          //tomar los datos del formulario
-                            var send = document.getElementById("colFormLabelSm");
-                            var errores = false;
-                            var expresion = /\w+@\w+\.+[a-z]/;
-
-
-                           //los span de errores del formulario
-                            var errorSend = document.querySelector("span.errorSusc");
+                                  //tomar los datos del formulario
+                                    var send = document.getElementById("colFormLabelSm");
+                                    var errores = false;
+                                    var expresion = /\w+@\w+\.+[a-z]/;
 
 
-                          //por cada dato voy a validar
-
-                             //campo send
-                             if(send.value == ""){
-                                errorSend.innerHTML = "El correo electrónico es obligatorio.";
-                                send.style.border = "2px solid #ffa81c";
-                                errores = true;
-                              }else if(send.value.length < 3){
-                                errorSend.innerHTML = "El correo electrónico debe contener al menos 3 caracteres.";
-                                send.style.border = "2px solid #ffa81c";
-                                errores = true;
-                            }else if(send.value.length > 40){
-                                errorSend.innerHTML = "La extensión del correo electrónico no debe superar los 40 caracteres.";
-                                send.style.border = "2px solid #ffa81c";
-                                errores = true;
-                            }else if(send.value.trim()== ""){
-                                errorSend.innerHTML = "El correo electrónico no puede tener espacios vacíos.";
-                                send.style.border = "2px solid #ffa81c";
-                                errores = true;
-                            }else if(!expresion.test(send.value)){
-                                errorSend.innerHTML = "El formato no es válido.";
-                                send.style.border = "2px solid #ffa81c";
-                                errores = true;
-                            }else{
-                                errorSend.innerHTML = "";
-                                send.style.border = "2px solid #20db93";
-                              }
-
-                          //si todo esta bien, le doy la bienvenida
-                                  if(!errores){
-                                      alert("¡Gracias por suscribirte!")
-                                  };
+                                   //los span de errores del formulario
+                                    var errorSend = document.querySelector("span.errorSusc");
 
 
-                         })
+                                  //por cada dato voy a validar
 
-                        });
+                                     //campo send
+                                     if(send.value == ""){
+                                        errorSend.innerHTML = "El correo electrónico es obligatorio.";
+                                        send.style.border = "2px solid #ffa81c";
+                                        errores = true;
+                                      }else if(send.value.length < 3){
+                                        errorSend.innerHTML = "El correo electrónico debe contener al menos 3 caracteres.";
+                                        send.style.border = "2px solid #ffa81c";
+                                        errores = true;
+                                    }else if(send.value.length > 40){
+                                        errorSend.innerHTML = "La extensión del correo electrónico no debe superar los 40 caracteres.";
+                                        send.style.border = "2px solid #ffa81c";
+                                        errores = true;
+                                    }else if(send.value.trim()== ""){
+                                        errorSend.innerHTML = "El correo electrónico no puede tener espacios vacíos.";
+                                        send.style.border = "2px solid #ffa81c";
+                                        errores = true;
+                                    }else if(!expresion.test(send.value)){
+                                        errorSend.innerHTML = "El formato no es válido.";
+                                        send.style.border = "2px solid #ffa81c";
+                                        errores = true;
+                                    }else{
+                                        errorSend.innerHTML = "";
+                                        send.style.border = "2px solid #20db93";
+                                      }
 
-            </script>
+                                  //si todo esta bien, le doy la bienvenida
+                                          if(!errores){
+                                              alert("¡Gracias por suscribirte!")
+                                          };
 
+
+                                 })
+
+                                });
+
+                    </script>
 
 </body>
 </html>

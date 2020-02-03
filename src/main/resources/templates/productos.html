@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style3.css">
-
+    <link rel="stylesheet" href="style.css">
     <title>Wabi-Sabi Deco</title>
 </head>
 <body>
@@ -32,7 +30,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Productos</a>
                         <div class="dropdown-menu" style="background-color: #343a40;">
-                            <a class="dropdown-item" href="productos">Ver todos</a>
+                            <a class="dropdown-item" href="#">Ver todos</a>
                             <hr class="divisor">
                             <a class="dropdown-item" href="#">Macetas</a>
                             <a class="dropdown-item" href="#">Almohadones</a>
@@ -55,7 +53,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="registro">Registrarse</a>
                     </li>
-                    <li class="nav-item"><a href="carrito"><img src="imagenes/Cart-png.png" style="width: 35px; height: 35px;margin-left: inherit;" alt="carrito"></a></li>
+                    <li><a href="carrito"><img src="imagenes/Cart-png.png" style="width: 35px; height: 35px;margin-left: inherit;" alt="carrito"></a></li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Buscar producto" aria-label="Search">
@@ -66,29 +64,79 @@
     </div>
 </header>
 
-<div class="encabezado" style="margin-top:120px;">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb" style="background-color: #68ECA3 ;margin-bottom: 50px;">
-            <li class="breadcrumb-item"><a href="index" style="color: #199c6a;" >Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page" style="color: #343a40;" >Quiénes somos</li>
-        </ol>
-    </nav>
-</div>
-<section>
-    <div class="container">
-        <main class="row">
-            <div class="col-12 col-md">
-                <h3><strong>Quiénes somos</strong></h3>
-                <p class="texcontenido" style="margin-top: 30px;">
-                    <strong>Wabi-Sabi</strong> empezó como una idea en el fin del mundo de <strong>Vero, Flor, Eri y Fer</strong>,
-                    cuatro turistas frecuentes de Tierra del Fuego, apasionadas por el diseño. Donde el hogar es refugio imprescindible y debe tener color y calor más que en otros lugares para ganarle al frío. Con el tiempo esa nobleza fueguina se entreveró con una impronta porteña que enfatiza los valores de la tradición pero innovando y buscando aggiornarse. A partir de esta fusión, comenzó a gestarse el camino.
-
-                    Con el diseño industrial como premisa intentamos revalorizar los objetos cotidianos para que no solo sean funcionales sino tambien personalicen los espacios. Creamos y fabricamos con la idea que lo que hacemos tenga intervencion por parte de quien nos elige.  Para eso nos empeñamos en darle al usuario una experiencia única de customizacion a partir de la eleccion de colores, estilos o funcionalidad de los productos. Nacimos de una combinación, por eso creemos que la amalgama de ideas y estilos es la fórmula para crecer y aprender, siempre.
-                </p>
-            </div>
-        </main>
+<section class="products">
+    <div class="encabezado"style="margin-top:120px;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: #68ECA3 ;margin-bottom: 50px;">
+                <li class="breadcrumb-item"><a href="index" style="color: #199c6a;" >Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: #343a40;" >Ver todos los productos</li>
+            </ol>
+        </nav>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-12">
+
+
+                <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
+                    <img src="imagenes/espejo-hp.jpg" class="card-img-top" alt="espejo harry">
+                    <div class="card-body">
+                        <h5 class="card-title">Espejo Reliquia</h5>
+                        <p class="card-text">Espejo Reliquias de la muerte. Borde acero patinado. Único color y formato</p>
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+                <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
+                    <img src="imagenes/espejo-hp.jpg" class="card-img-top" alt="espejo harry">
+                    <div class="card-body">
+                        <h5 class="card-title">Espejo Reliquia</h5>
+                        <p class="card-text">Espejo Reliquias de la muerte. Borde acero patinado. Único color y formato</p>
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+                <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
+                    <img src="imagenes/espejo-hp.jpg" class="card-img-top" alt="espejo harry">
+                    <div class="card-body">
+                        <h5 class="card-title">Espejo Reliquia</h5>
+                        <p class="card-text">Espejo Reliquias de la muerte. Borde acero patinado. Único color y formato</p>
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+                <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
+                    <img src="imagenes/macetas-aereas.jpg" class="card-img-top" alt="macetas-aereas">
+                    <div class="card-body">
+                        <h5 class="card-title">Macetas de pared</h5>
+                        <p class="card-text">Macetas aéreas circulares de madera pintada, vienen en diversos colores</p>
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+                <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
+                    <img src="imagenes/macetas-aereas.jpg" class="card-img-top" alt="macetas-aereas">
+                    <div class="card-body">
+                        <h5 class="card-title">Macetas de pared</h5>
+                        <p class="card-text">Macetas aéreas circulares de madera pintada, vienen en diversos colores</p>
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+                <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
+                    <img src="imagenes/macetas-aereas.jpg" class="card-img-top" alt="macetas-aereas">
+                    <div class="card-body">
+                        <h5 class="card-title">Macetas de pared</h5>
+                        <p class="card-text">Macetas aéreas circulares de madera pintada, vienen en diversos coloreso</p>
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
 </section>
+</div>
+
+
 <footer class="container py-5">
     <div class="row">
         <div class="col-12 col-md">
@@ -143,62 +191,60 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script>
-                window.addEventListener('load', function(){
+      window.addEventListener('load', function(){
 
-                          //detectar cuando toco el boton de contacto (se envía el formulario)
-                           var botonSuscribirse = document.getElementById("suscribe");
-                           botonSuscribirse.addEventListener('click',function(){
+                //detectar cuando toco el boton de contacto (se envía el formulario)
+                 var botonSuscribirse = document.getElementById("suscribe");
+                 botonSuscribirse.addEventListener('click',function(){
 
-                            //tomar los datos del formulario
-                              var send = document.getElementById("colFormLabelSm");
-                              var errores = false;
-                              var expresion = /\w+@\w+\.+[a-z]/;
-
-
-                             //los span de errores del formulario
-                              var errorSend = document.querySelector("span.errorSusc");
+                  //tomar los datos del formulario
+                    var send = document.getElementById("colFormLabelSm");
+                    var errores = false;
+                    var expresion = /\w+@\w+\.+[a-z]/;
 
 
-                            //por cada dato voy a validar
-
-                               //campo send
-                               if(send.value == ""){
-                                  errorSend.innerHTML = "El correo electrónico es obligatorio.";
-                                  send.style.border = "2px solid #ffa81c";
-                                  errores = true;
-                                }else if(send.value.length < 3){
-                                  errorSend.innerHTML = "El correo electrónico debe contener al menos 3 caracteres.";
-                                  send.style.border = "2px solid #ffa81c";
-                                  errores = true;
-                              }else if(send.value.length > 40){
-                                  errorSend.innerHTML = "La extensión del correo electrónico no debe superar los 40 caracteres.";
-                                  send.style.border = "2px solid #ffa81c";
-                                  errores = true;
-                              }else if(send.value.trim()== ""){
-                                  errorSend.innerHTML = "El correo electrónico no puede tener espacios vacíos.";
-                                  send.style.border = "2px solid #ffa81c";
-                                  errores = true;
-                              }else if(!expresion.test(send.value)){
-                                  errorSend.innerHTML = "El formato no es válido.";
-                                  send.style.border = "2px solid #ffa81c";
-                                  errores = true;
-                              }else{
-                                  errorSend.innerHTML = "";
-                                  send.style.border = "2px solid #20db93";
-                                }
-
-                            //si todo esta bien, le doy la bienvenida
-                                    if(!errores){
-                                        alert("¡Gracias por suscribirte!")
-                                    };
+                   //los span de errores del formulario
+                    var errorSend = document.querySelector("span.errorSusc");
 
 
-                           })
+                  //por cada dato voy a validar
 
-                          });
+                     //campo send
+                     if(send.value == ""){
+                        errorSend.innerHTML = "El correo electrónico es obligatorio.";
+                        send.style.border = "2px solid #ffa81c";
+                        errores = true;
+                      }else if(send.value.length < 3){
+                        errorSend.innerHTML = "El correo electrónico debe contener al menos 3 caracteres.";
+                        send.style.border = "2px solid #ffa81c";
+                        errores = true;
+                    }else if(send.value.length > 40){
+                        errorSend.innerHTML = "La extensión del correo electrónico no debe superar los 40 caracteres.";
+                        send.style.border = "2px solid #ffa81c";
+                        errores = true;
+                    }else if(send.value.trim()== ""){
+                        errorSend.innerHTML = "El correo electrónico no puede tener espacios vacíos.";
+                        send.style.border = "2px solid #ffa81c";
+                        errores = true;
+                    }else if(!expresion.test(send.value)){
+                        errorSend.innerHTML = "El formato no es válido.";
+                        send.style.border = "2px solid #ffa81c";
+                        errores = true;
+                    }else{
+                        errorSend.innerHTML = "";
+                        send.style.border = "2px solid #20db93";
+                      }
 
-              </script>
+                  //si todo esta bien, le doy la bienvenida
+                          if(!errores){
+                              alert("¡Gracias por suscribirte!")
+                          };
 
 
+                 })
+
+                });
+
+    </script>
 </body>
 </html>

@@ -46,6 +46,10 @@ public class HomeController {
     return "productos";
     }
 
+	@GetMapping("contacto")
+    public String getContacto(){
+    return "contacto";
+    }
 
 
 }

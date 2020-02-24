@@ -7,10 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 	@Entity
-
+	@Table(name = "clientes_ecommerce")
 	public class Usuario {
 		@Id
 		@GeneratedValue(strategy=GenerationType.AUTO)//tuve un tema con el auto-incremental. En el postman debía colocar el id manualmente, no se generaba solo. Cuando colocaba "strategy = IDENTITY o AUTO, me tiraba error :(
@@ -29,7 +30,7 @@ import javax.persistence.Id;
 		private String provincia;
 		
 		@Column(nullable = false)
-		private Date FechaDeNacimiento;
+		private Date fechaDeNacimiento;
 		
 		@Column(nullable = false)
 		private Boolean sexo;
@@ -53,7 +54,7 @@ import javax.persistence.Id;
 			this.nombre = nombre;
 			this.telefono = telefono;
 			this.provincia = provincia;
-			FechaDeNacimiento = fechaDeNacimiento;
+			this.fechaDeNacimiento = fechaDeNacimiento;
 			this.sexo = sexo;
 			this.contrasenia = contrasenia;
 			this.activo = activo;
@@ -89,10 +90,10 @@ import javax.persistence.Id;
 			this.provincia = provincia;
 		}
 		public Date getFechaDeNacimiento() {
-			return FechaDeNacimiento;
+			return fechaDeNacimiento;
 		}
 		public void setFechaDeNacimiento(Date fechaDeNacimiento) {
-			FechaDeNacimiento = fechaDeNacimiento;
+			this.fechaDeNacimiento = fechaDeNacimiento;
 		}
 		public Boolean getSexo() {
 			return sexo;

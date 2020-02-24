@@ -14,11 +14,11 @@ public class HomeController {
 		return "index";
 	}
 	
-	@GetMapping("login")
+	//@GetMapping("login")
 	
-	public String getLogin() {
-		return "login";
-	}
+	//public String getLogin() {
+	//return "login";
+	//}
 	
 
 	@GetMapping("carrito")
@@ -36,10 +36,10 @@ public class HomeController {
         return "nosotros";
     }
     
-	@GetMapping("registro")
-    public String getRegistro(){
-    return "registro";
-    }
+	//@GetMapping("registro")
+    //public String getRegistro(){
+    //return "registro";
+    //}
     
 	@GetMapping("productos")
     public String getProductos(){

@@ -1,5 +1,7 @@
 package com.practica1.demobp.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,66 +17,103 @@ import javax.persistence.Id;
 		private Integer id;
 		
 		@Column(nullable = false,unique = true)
-		private Integer dni;
+		private String email;
 		
 		@Column(nullable = false)
 		private String nombre;
 		
-		private String apellido;
+		@Column(nullable = false)
+		private Integer telefono;
+		
+		@Column(nullable = false)
+		private String provincia;
+		
+		@Column(nullable = false)
+		private Date FechaDeNacimiento;
+		
+		@Column(nullable = false)
+		private Boolean sexo;
+		
+		@Column(nullable = false)
+		private String contrasenia;
+		
+		
 		@Column(nullable = false)
 		private Boolean activo;
-		//Hay que agregar atributos como email, fecha de nacimiento, nacionalidad, sexo, user name, password?(Base de Datos)
+		
+		
 		public Usuario() {
 			
 		}
-
-		public Usuario(Integer id, Integer dni, String nombre, String apellido, Boolean activo) {
+		public Usuario(Integer id, String email, String nombre, Integer telefono, String provincia,
+				Date fechaDeNacimiento, Boolean sexo, String contrasenia, Boolean activo) {
+			super();
 			this.id = id;
-			this.dni = dni;
+			this.email = email;
 			this.nombre = nombre;
-			this.apellido = apellido;
+			this.telefono = telefono;
+			this.provincia = provincia;
+			FechaDeNacimiento = fechaDeNacimiento;
+			this.sexo = sexo;
+			this.contrasenia = contrasenia;
 			this.activo = activo;
 		}
-
 		public Integer getId() {
 			return id;
 		}
-
 		public void setId(Integer id) {
 			this.id = id;
 		}
-
-		public Integer getDni() {
-			return dni;
+		public String getEmail() {
+			return email;
 		}
-
-		public void setDni(Integer dni) {
-			this.dni = dni;
+		public void setEmail(String email) {
+			this.email = email;
 		}
-
 		public String getNombre() {
 			return nombre;
 		}
-
 		public void setNombre(String nombre) {
 			this.nombre = nombre;
 		}
-
-		public String getApellido() {
-			return apellido;
+		public Integer getTelefono() {
+			return telefono;
 		}
-
-		public void setApellido(String apellido) {
-			this.apellido = apellido;
+		public void setTelefono(Integer telefono) {
+			this.telefono = telefono;
 		}
-
+		public String getProvincia() {
+			return provincia;
+		}
+		public void setProvincia(String provincia) {
+			this.provincia = provincia;
+		}
+		public Date getFechaDeNacimiento() {
+			return FechaDeNacimiento;
+		}
+		public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+			FechaDeNacimiento = fechaDeNacimiento;
+		}
+		public Boolean getSexo() {
+			return sexo;
+		}
+		public void setSexo(Boolean sexo) {
+			this.sexo = sexo;
+		}
+		public String getContrasenia() {
+			return contrasenia;
+		}
+		public void setContrasenia(String contrasenia) {
+			this.contrasenia = contrasenia;
+		}
 		public Boolean getActivo() {
 			return activo;
 		}
-
 		public void setActivo(Boolean activo) {
 			this.activo = activo;
 		}
 		
+		
 
+		
 }

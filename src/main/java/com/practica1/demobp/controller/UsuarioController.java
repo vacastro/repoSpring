@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,14 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.practica1.demobp.model.Usuario;
 import com.practica1.demobp.repository.UsuarioJpaRepository;
 
-@RestController
-@RequestMapping("usuario")
+@Controller
+
 
 public class UsuarioController {
 	@Autowired
 	private UsuarioJpaRepository usuarioJpaRepository;
 
-	@GetMapping("")
+	@GetMapping("usuario")
 	public List<Usuario> getUsuarios() {
 		List<Usuario> usuarios = usuarioJpaRepository.findAll();
 		return usuarios;
@@ -33,8 +34,13 @@ public class UsuarioController {
 		Optional<Usuario> unOptionalUsuario = usuarioJpaRepository.findById(id);
 		return unOptionalUsuario.get();
 	}
+	
+	@GetMapping("/registro")
+	public String getFormularioRegistro() {
+		return "registro";
+	}
 
-	@PostMapping("/save")
+	@PostMapping("/registro")
 	public Usuario insertUsuario(@RequestBody Usuario usuarioARegistrar) {
 		Usuario unUsuarioRegistrado = usuarioJpaRepository.save(usuarioARegistrar);
 		return unUsuarioRegistrado;
@@ -44,5 +50,7 @@ public class UsuarioController {
 	public void deleteUsuario(@PathVariable Integer id) {
 		usuarioJpaRepository.deleteById(id);
 	}
+	
+	
 
 }

@@ -24,7 +24,7 @@ public class UsuarioController {
 	private UsuarioJpaRepository usuarioJpaRepository;
 
 	@GetMapping("usuario")
-	public List<Usuario> getUsuarios() {
+		public List<Usuario> getUsuarios() {
 		List<Usuario> usuarios = usuarioJpaRepository.findAll();
 		return usuarios;
 	}

@@ -28,11 +28,11 @@ public class UsuarioController {
 		return usuarios;
 	}
 
-	@GetMapping("/get/{id}")
-	public Usuario getUsuarioById(@PathVariable Integer id) {
-		Optional<Usuario> unOptionalUsuario = usuarioJpaRepository.findById(id);
-		return unOptionalUsuario.get();
-	}
+	//@GetMapping("/get/{id}")
+	//public Usuario getUsuarioById(@PathVariable Integer id) {
+	//	Optional<Usuario> unOptionalUsuario = usuarioJpaRepository.findById(id);
+	//	return unOptionalUsuario.get();
+	//}
 	
 	@GetMapping("/registro")
 	public String getFormularioRegistro() {
@@ -40,9 +40,9 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/registro")
-	public Usuario insertUsuario(@RequestBody Usuario usuarioARegistrar) {
-		Usuario unUsuarioRegistrado = usuarioJpaRepository.save(usuarioARegistrar);
-		return unUsuarioRegistrado;
+	public String insertUsuario(Usuario usuarioARegistrar) {
+		usuarioJpaRepository.save(usuarioARegistrar);
+		return "index";
 	}
 
 	@DeleteMapping("/delete/{id}")

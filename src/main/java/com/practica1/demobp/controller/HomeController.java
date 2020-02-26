@@ -14,11 +14,11 @@ public class HomeController {
 		return "index";
 	}
 	
-	//@GetMapping("login")
+	@GetMapping("login")
 	
-	//public String getLogin() {
-	//return "login";
-	//}
+	public String getLogin() {
+	return "login";
+	}
 	
 
 	@GetMapping("carrito")

@@ -15,15 +15,18 @@ import com.practica1.demobp.model.Producto;
 import com.practica1.demobp.repository.ProductoJpaRepository;
 
 @Controller
-@RequestMapping ("administrador")
+
+@RequestMapping("producto")
+
+
 public class ProductoController {
 	@Autowired
 	private ProductoJpaRepository productoJpaRepository;
 	
 	//alta
-	@GetMapping ("newProd")
+	@GetMapping ("")
 	public String getFormProductos() {
-		return null; //armar form para dar de alta produc - retorne vista
+		return "adm"; //armar form para dar de alta produc - retorne vista
 	}
 	
 	@GetMapping("producto")
@@ -39,9 +42,9 @@ public class ProductoController {
 	
 	@GetMapping("administrador")
 	public String abmProducto() {
-		return null; //ver a que vista lo enviamos
+		return "adm"; //ver a que vista lo enviamos
 	}
-	@PostMapping("administrador")
+	@PostMapping("crear")
 	public String insertProducto(Producto ProductoARegistrar) {
 		productoJpaRepository.save(ProductoARegistrar);
 		return "index";

@@ -1,40 +1,167 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <form method="POST">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="text" class="form-control" id="inputEmail4" name="email">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style2.css">
+    <script src="/javascript/validations_register.js"></script>
+    <title>Wabi-Sabi Deco</title>
+</head>
+<body>
+<header>
+    <div class="row">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <img src="imagenes/logo-sucu-blanco.png" alt="logo" style="width:40px;height:40px;">
+            <a class="navbar-brand" href="index">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nosotros</a>
+                        <div class="dropdown-menu" style="background-color: #343a40;">
+                            <a class="dropdown-item" href="nosotros">Quiénes Somos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Productos</a>
+                        <div class="dropdown-menu" style="background-color: #343a40;">
+                            <a class="dropdown-item" href="productos">Ver todos</a>
+                            <hr class="divisor">
+                            <a class="dropdown-item" href="#">Macetas</a>
+                            <a class="dropdown-item" href="#">Almohadones</a>
+                            <a class="dropdown-item" href="#">Cuadros</a>
+                            <a class="dropdown-item" href="#">Espejos</a>
+                            <a class="dropdown-item" href="#">Coffe Time</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro">Registrarse</a>
+                    </li>
+                    <li class="nav-item"><a href="carrito"><img src="imagenes/Cart-png.png" style="width: 35px; height: 35px;margin-left: inherit;" alt="carrito"></a></li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar producto" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+            </div>
+        </nav>
     </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Nombre</label>
-      <input type="text" class="form-control" id="inputPassword4" name="nombre">
+</header>
+<section>
+    <div class="encabezado"style="margin-top:120px;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: #68ECA3 ;margin-bottom: 50px;">
+                <li class="breadcrumb-item"><a href="index.html" style="color: #199c6a;" >Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page" style="color: #343a40;" >Registro</li>
+            </ol>
+        </nav>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Contraseña</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="contrasenia">
-  </div>
-  
-  
-  <button type="submit" class="btn btn-primary">Enviar</button>
-</form>
+    <div class="row">
+        <div class="formulario offset-md-3 col-md-6">
+            <form method="POST" id="formulario">
+                <p>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" name="nombre" placeholder="Ingrese su nombre completo aquí..">
+                    <span style="color: #ffa81c; font-size: 11px;" class="errorNombre" ></span>
+                </p>
+                <p>
+                    <label for="email">E-Mail:</label>
+                    <input id="email" type="email" name="email" value="" placeholder="ejemplo: usuario@ejemplo.com" required!>
+                    <span style="color: #ffa81c; font-size: 11px;" class="errorEmail" ></span>
+                </p>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+                <p>
+                    <label for="contraseña">Contraseña:</label>
+                    <input id="password" type="password" placeholder="Ingrese la contraseña" name="contrasenia">
+                    <span style="color: #ffa81c; font-size: 11px;" class="errorContrasenia2" ></span>
+                </p>
+                <p>
+                    <label for="confir pass">Confirmar Contraseña:</label>
+                    <input id="password_confirm" type="password" name="confir pass" placeholder="Confirme la contraseña">
+                    <span style="color: #ffa81c; font-size: 11px;" class="errorContrasenia" ></span>
+                </p>
+                <p>
+                    <input id="submit" type="submit" value="Enviar">
+                    <!--<button type="button" class="Registrarme">Registrarme!</button>-->
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+<footer class="container py-5">
+    <div class="row">
+        <div class="col-12 col-md">
+            <img src="imagenes/logo1.png" alt="" style="width:80px; height:80px">
+            <small class="d-block mb-3 text-muted">&copy; 2019</small>
+        </div>
+        <div class="col-6 col-md">
+            <h5>NAVEGACIÓN</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Productos</a></li>
+                <li><a class="text-muted" href="#">Preguntas Frecuentes</a></li>
+                <li><a class="text-muted" href="#">Quienes somos</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5>FORMAS DE ENVÍO</h5>
+            <ul class="list-unstyled text-small">
+                <li> <img src="imagenes/logo-oca.jpg" alt="" style="width:80px; height:40px"> </li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5>CONTACTANOS</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">ventas@tucasa.com</a></li>
+                <li>SHOWROOM PALERMO</li>
+                <li>DIRECCIÓN:Costa Rica 3900, timbre 2, CABA</li>
+                <li>HORARIOS: Miércoles a Domingos de 15 a 19hs</li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5>REDES SOCIALES</h5>
+            <ul class="list-unstyled text-small">
+                <li><img src="imagenes/fb.png" alt="" style="width:40px; height:40px"></li>
+                <li><img src="imagenes/ig.png" alt="" style="width:40px; height:40px"></li>
+                <li>ENTERATE LAS ÚLTIMAS NOVEDADES</li>
+                <li><form>
+                    <div class="form-group row">
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="Ingrese email">
+                                <span style="color: #ffa81c; font-size: 11px;" class="errorSusc" ></span>
+                            </div>
+                            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm" style="padding:0px;" >
+                                <button id="suscribe" type="submit" style="background: #68ECA3;border: 2px solid #68ECA3;" ><img src="imagenes/send-footer.png" style="width: 20px;height: 20px;" alt="avion-papel"></button>
+                            </label>
+                        </div>
+                </form></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+</body>
 </html>

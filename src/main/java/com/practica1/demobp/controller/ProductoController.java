@@ -5,14 +5,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import com.practica1.demobp.model.Producto;
 import com.practica1.demobp.repository.ProductoJpaRepository;
+
+import javax.jws.WebParam;
 
 @Controller
 
@@ -23,30 +22,29 @@ public class ProductoController {
 	@Autowired
 	private ProductoJpaRepository productoJpaRepository;
 	
-	//alta
-	@GetMapping ("")
+
+	@GetMapping ("adm")
 	public String getFormProductos() {
-		return "adm"; //armar form para dar de alta produc - retorne vista
+		//productoJpaRepository.jpqlFindByName();
+		return "adm";
 	}
-	
-	@GetMapping("producto")
-	public List<Producto> getProductos(){
+
+	@GetMapping("all")
+	public String allProducts(Model model){
 		List<Producto>productos = productoJpaRepository.findAll();
-		return productos;//armar vista tabla de productos y devolver vista
+		model.addAttribute("listaProductos",productos);
+		return "ListadoDeProductos";
 	}
 	
 	@DeleteMapping("/delete/{id}")
 	public void deleteProducto(@PathVariable Integer id) {
 		productoJpaRepository.deleteById(id);
 	}
-	
-	@GetMapping("administrador")
-	public String abmProducto() {
-		return "adm"; //ver a que vista lo enviamos
-	}
-	@PostMapping("crear")
+
+	@PostMapping("adm")
 	public String insertProducto(Producto ProductoARegistrar) {
 		productoJpaRepository.save(ProductoARegistrar);
-		return "index";
+		return "adm";
 	}
+
 }

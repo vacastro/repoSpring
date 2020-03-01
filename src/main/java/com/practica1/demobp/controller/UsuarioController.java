@@ -28,12 +28,6 @@ public class UsuarioController {
 		return usuarios;
 	}
 
-	//@GetMapping("/get/{id}")
-	//public Usuario getUsuarioById(@PathVariable Integer id) {
-	//	Optional<Usuario> unOptionalUsuario = usuarioJpaRepository.findById(id);
-	//	return unOptionalUsuario.get();
-	//}
-	
 	@GetMapping("/registro")
 	public String getFormularioRegistro() {
 		return "registro";

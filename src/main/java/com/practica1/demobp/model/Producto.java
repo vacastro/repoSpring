@@ -1,6 +1,6 @@
 package com.practica1.demobp.model;
 
-import com.practica1.demobp.model.Categoria;
+//import com.practica1.demobp.model.Categoria;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,16 +18,18 @@ public class Producto {
 	private Integer id;
 	
 
-	@ManyToOne
-	private Categoria categoria;
-	
+	//@ManyToOne
+	//private Categoria categoria;
+	@Column(nullable = false)
+	private String nombre;
+
 	@Column(nullable = false)
 	private Double precio;
 	
 	@Column(nullable = false)
 	private String descripcion;
-	@Column
-	private String caracteristicaId;
+	//@Column
+	//private String caracteristicaId;
 	@Column(nullable = false)
 	private Boolean stockActivo;
 
@@ -35,13 +37,14 @@ public class Producto {
 
 	}
 
-	public Producto(Integer id, Categoria categoria, Double precio, String descripcion, String caracteristicaId,
+	public Producto(Integer id/*, Categoria categoria*/, String nombre, Double precio, String descripcion, /*String caracteristicaId,*/
 			Boolean stockActivo) {
 		this.id = id;
-		this.categoria = categoria;
+		this.nombre = nombre;
+		//this.categoria = categoria;
 		this.precio = precio;
 		this.descripcion = descripcion;
-		this.caracteristicaId = caracteristicaId;
+		//this.caracteristicaId = caracteristicaId;
 		this.stockActivo = stockActivo;
 	}
 
@@ -53,13 +56,21 @@ public class Producto {
 		this.id = id;
 	}
 
-	public Categoria getCategoria() {
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	/*public Categoria getCategoria() {
 		return categoria;
 	}
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
-	}
+	}*/
 
 	public Double getPrecio() {
 		return precio;
@@ -77,13 +88,13 @@ public class Producto {
 		this.descripcion = descripcion;
 	}
 
-	public String getCaracteristicaId() {
+	/*public String getCaracteristicaId() {
 		return caracteristicaId;
 	}
 
 	public void setCaracteristicaId(String caracteristicaId) {
 		this.caracteristicaId = caracteristicaId;
-	}
+	}*/
 
 	public Boolean getStockActivo() {
 		return stockActivo;

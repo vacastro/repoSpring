@@ -80,12 +80,14 @@
                 <p>
                     <label for="nombre">Nombre</label>
                     <input id="nombre" type="text" name="nombre" placeholder="Ingrese su nombre completo aquí..">
-                    <span style="color: #ffa81c; font-size: 11px;" class="errorNombre" ></span>
+                    <span style="color: #ffa81c; font-size: 11px;" class="errorNombre"></span>
+                    <p th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></p>
                 </p>
                 <p>
                     <label for="email">E-Mail:</label>
                     <input id="email" type="email" name="email" value="" placeholder="ejemplo: usuario@ejemplo.com" required!>
                     <span style="color: #ffa81c; font-size: 11px;" class="errorEmail" ></span>
+                    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
                 </p>
                 <p>
                     <label for="telefono">Teléfono:</label>
@@ -129,12 +131,13 @@
 
                 <p>
                     <label for="contraseña">Contraseña:</label>
-                    <input id="password" type="password" name="contraseña" placeholder="Ingrese la contraseña">
+                    <input id="password" type="password" name="contrasenia" placeholder="Ingrese la contraseña">
                     <span style="color: #ffa81c; font-size: 11px;" class="errorContrasenia2" ></span>
+                    <p th:if="${#fields.hasErrors('contrasenia')}" th:errors="*{contrasenia}"></p>
                 </p>
                 <p>
                     <label for="confir pass">Confirmar Contraseña:</label>
-                    <input id="password_confirm" type="password" name="confir pass" placeholder="Confirme la contraseña">
+                    <input id="password_confirm" type="password" name="contrasenia" placeholder="Confirme la contraseña">
                     <span style="color: #ffa81c; font-size: 11px;" class="errorContrasenia" ></span>
                 </p>
                 <p>

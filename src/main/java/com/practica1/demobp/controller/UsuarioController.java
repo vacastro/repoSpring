@@ -3,8 +3,11 @@ package com.practica1.demobp.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,11 +36,24 @@ public class UsuarioController {
 		return "registro";
 	}
 
+	//@PostMapping("/registro")
+	//public String insertUsuario(Usuario usuarioARegistrar) {
+		//usuarioJpaRepository.save(usuarioARegistrar);
+		//return "index";
+	//}
+	
 	@PostMapping("/registro")
-	public String insertUsuario(Usuario usuarioARegistrar) {
-		usuarioJpaRepository.save(usuarioARegistrar);
-		return "index";
-	}
+	public String insertUsuario(@Valid Usuario usuarioARegistrar, BindingResult result) {
+	    if (result.hasErrors()) {			
+	        return "registro";
+	    } else {
+	    
+			usuarioJpaRepository.save(usuarioARegistrar);
+			return "index";
+	    }}
+
+	
+	
 
 	@DeleteMapping("/delete/{id}")
 	public void deleteUsuario(@PathVariable Integer id) {

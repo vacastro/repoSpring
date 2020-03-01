@@ -8,6 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+//import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 
 	@Entity
@@ -18,18 +23,30 @@ import javax.persistence.Table;
 		private Integer id;
 		
 		@Column(nullable = false,unique = true)
+		@NotBlank (message="el Email no puede tener espacios")
+		@Email(message="el formato es incorrecto")
+		//@Pattern (regexp="\\w+@\\w+\\.+[a-z]")
 		private String email;
 		
-		
+		@NotEmpty(message="el Nombre no puede estar vacio")
+		@Size (min=3, max=40, message="el Nombre tiene que tener mas de 3 caracteres y menos de 40")
+		@NotBlank (message="el Nombre no puede ser espacios")
 		private String nombre;
 		//private Integer telefono;
 		//private String provincia;
 		//private Date fechaDeNacimiento;
 		//private Boolean sexo;
+		
+		
+		
+		@Size(min=8,max=30, message="el Nombre tiene que tener mas de 3 caracteres y menos de 40")
+		@NotBlank (message="el Nombre no puede ser espacios")
+		@NotEmpty (message="el Nombre no puede estar vacio")
+		
 		private String contrasenia;
 		//private Boolean activo;
 		
-		
+		//como validar el confirmar contrasenia con spring
 		public Usuario() {
 			
 		}

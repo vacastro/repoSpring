@@ -8,12 +8,12 @@ public class Carrito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column (nullable = false)
-    private Usuario usuario;
-    @Column (nullable = false)
-    private Producto producto;
+    //@Column (nullable = false)
+    //private Usuario usuario;
+    //@Column (nullable = false)
+    //private Producto producto;
 
-    public Carrito() {
+    /*public Carrito() {
     }
 
     public Carrito(Integer id, Usuario usuario, Producto producto) {
@@ -44,5 +44,5 @@ public class Carrito {
 
     public void setProducto(Producto producto) {
         this.producto = producto;
-    }
+    }*/
 }

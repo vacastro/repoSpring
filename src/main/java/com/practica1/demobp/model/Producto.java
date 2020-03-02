@@ -2,12 +2,7 @@ package com.practica1.demobp.model;
 
 //import com.practica1.demobp.model.Categoria;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 
@@ -17,9 +12,9 @@ public class Producto {
 	@GeneratedValue
 	private Integer id;
 	
-
-	//@ManyToOne
-	//private Categoria categoria;
+	@OneToOne
+	@JoinColumn(name = "categoria_id")
+	private Categoria categoria;
 	@Column(nullable = false)
 	private String nombre;
 

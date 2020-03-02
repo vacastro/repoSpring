@@ -8,10 +8,13 @@ public class Carrito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    //@Column (nullable = false)
-    //private Usuario usuario;
-    //@Column (nullable = false)
-    //private Producto producto;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "producto_id")
+    private Producto producto;
 
     /*public Carrito() {
     }

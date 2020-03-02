@@ -22,6 +22,11 @@ import javax.validation.constraints.Size;
 		@GeneratedValue(strategy=GenerationType.AUTO)//tuve un tema con el auto-incremental. En el postman debía colocar el id manualmente, no se generaba solo. Cuando colocaba "strategy = IDENTITY o AUTO, me tiraba error :(
 		private Integer id;
 		
+		
+		
+
+
+
 		@Column(nullable = false,unique = true)
 		@NotBlank (message="el Email no puede tener espacios")
 		@Email(message="el formato es incorrecto")
@@ -53,13 +58,24 @@ import javax.validation.constraints.Size;
 
 		
 
-		public Usuario(Integer id, String email, String nombre, String contrasenia) {
+	
+	public Usuario(Integer id,
+				@NotBlank(message = "el Email no puede tener espacios") @Email(message = "el formato es incorrecto") String email,
+				@NotEmpty(message = "el Nombre no puede estar vacio") @Size(min = 3, max = 40, message = "el Nombre tiene que tener mas de 3 caracteres y menos de 40") @NotBlank(message = "el Nombre no puede ser espacios") String nombre,
+				@Size(min = 8, max = 30, message = "el Nombre tiene que tener mas de 3 caracteres y menos de 40") @NotBlank(message = "el Nombre no puede ser espacios") @NotEmpty(message = "el Nombre no puede estar vacio") String contrasenia) {
 			super();
 			this.id = id;
 			this.email = email;
 			this.nombre = nombre;
 			this.contrasenia = contrasenia;
 		}
+
+
+
+
+
+
+
 
 
 
@@ -108,5 +124,7 @@ import javax.validation.constraints.Size;
 		public void setContrasenia(String contrasenia) {
 			this.contrasenia = contrasenia;
 		}
+		
+	
 	}
 		

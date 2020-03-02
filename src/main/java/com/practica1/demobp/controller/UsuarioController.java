@@ -32,7 +32,7 @@ public class UsuarioController {
 	}
 
 	@GetMapping("/registro")
-	public String getFormularioRegistro() {
+	public String getFormularioRegistro(Usuario usuario) {
 		return "registro";
 	}
 
@@ -43,14 +43,14 @@ public class UsuarioController {
 	//}
 	
 	@PostMapping("/registro")
-	public String insertUsuario(@Valid Usuario usuarioARegistrar, BindingResult result) {
+	public String insertUsuario(@Valid Usuario usuario, BindingResult result) {
 	    if (result.hasErrors()) {			
 	        return "registro";
-	    } else {
+	    }
 	    
-			usuarioJpaRepository.save(usuarioARegistrar);
-			return "index";
-	    }}
+		usuarioJpaRepository.save(usuario);
+		return "index";
+    }
 
 	
 	

@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style2.css">
-    <script src="../javascript/validacionlog.js"></script>
     <title>Wabi-Sabi Deco</title>
 </head>
 <body>
@@ -75,7 +74,7 @@
     </div>
     <div class="row-login">
         <div class="formulario offset-md-3 col-md-6">
-            <form action="validar.php" method="POST">
+            <form id="formlogin" method="POST">
                 <p>
                     <label for="email">E-Mail:</label>
                     <input id="email" type="email" name="email" value="" placeholder=" ejemplo: usuario@ejemplo.com"  required!>
@@ -84,7 +83,7 @@
 
                 <p>
                     <label for="contraseña">Contraseña:</label>
-                    <input id="password" type="password" name="contraseña" placeholder="Ingrese la contraseña">
+                    <input id="password" type="password" name="contrasenia" placeholder="Ingrese la contraseña">
                     <span style="color: #ffa81c; font-size: 11px;" class="errorContrasenia" ></span>
 
                 </p>

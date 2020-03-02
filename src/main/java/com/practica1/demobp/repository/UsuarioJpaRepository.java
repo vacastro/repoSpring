@@ -8,6 +8,6 @@ import com.practica1.demobp.model.Usuario;
 @Repository
 
 public interface UsuarioJpaRepository extends JpaRepository<Usuario, Integer>{
-	
+    Usuario findByEmail(String email);
 
 }

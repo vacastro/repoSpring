@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,17 +74,17 @@
     </div>
     <div class="row-login">
         <div class="formulario offset-md-3 col-md-6">
-            <form id="formlogin" method="POST">
+            <form id="formlogin" method="POST" th:action="@{/login}"  th:object="${usuario}">
                 <p>
                     <label for="email">E-Mail:</label>
-                    <input id="email" type="email" name="email" value="" placeholder=" ejemplo: usuario@ejemplo.com"  required!>
-                    <span style="color: #ffa81c; font-size: 11px;" class="errorEmail" ></span>
+                    <input id="email" type="email"  value="" th:field="*{email}" placeholder=" ejemplo: usuario@ejemplo.com"  required!>
+                    <span style="color: #ffa81c; font-size: 11px;" class="errorEmail" th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></span>
                 </p>
 
                 <p>
-                    <label for="contraseña">Contraseña:</label>
-                    <input id="password" type="password" name="contrasenia" placeholder="Ingrese la contraseña">
-                    <span style="color: #ffa81c; font-size: 11px;" class="errorContrasenia" ></span>
+                    <label for="password">Contraseña:</label>
+                    <input id="password" type="password"  th:field="*{contrasenia}" placeholder="Ingrese la contraseña">
+                    <span style="color: #ffa81c; font-size: 11px;" class="errorContrasenia" th:if="${#fields.hasErrors('contrasenia')}" th:errors="*{contrasenia}" ></span>
 
                 </p>
                 <!--<p>

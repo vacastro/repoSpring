@@ -38,9 +38,9 @@ import javax.validation.constraints.Size;
 		
 		
 		
-		@Size(min=8,max=30, message="el Nombre tiene que tener mas de 3 caracteres y menos de 40")
-		@NotBlank (message="el Nombre no puede ser espacios")
-		@NotEmpty (message="el Nombre no puede estar vacio")
+		@Size(min=8,max=30, message="la contraseña tiene que tener mas de 3 caracteres y menos de 40")
+		@NotBlank (message="la contraseña no puede ser espacios")
+		@NotEmpty (message="la contraseña no puede estar vacio")
 		
 		private String contrasenia;
 		//private Boolean activo;
@@ -118,13 +118,6 @@ import javax.validation.constraints.Size;
 		public void setContrasenia(String contrasenia) {
 			this.contrasenia = contrasenia;
 		}
-<<<<<<< HEAD
-		
-	
-=======
 
-
-
->>>>>>> 50f69f14462fefff32b2f573cc3b7aff42bdc39b
 	}
 		

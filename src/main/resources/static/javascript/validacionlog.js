@@ -8,7 +8,7 @@ window.addEventListener('load', function(){
         
         var email = document.getElementById("email");
         var pass = document.getElementById("password");
-        var pass_confirm = document.getElementById("password_confirm")
+      // var pass_confirm = document.getElementById("password_confirm")
         var errores = false;
         var expresion = /\w+@\w+\.+[a-z]/;
        

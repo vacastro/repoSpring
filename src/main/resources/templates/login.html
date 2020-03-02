@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style2.css">
+    <script type="validacionlog.js"></script>
     <title>Wabi-Sabi Deco</title>
 </head>
 <body>
@@ -74,7 +75,7 @@
     </div>
     <div class="row-login">
         <div class="formulario offset-md-3 col-md-6">
-            <form id="formlogin" method="POST" th:action="@{/login}"  th:object="${usuario}">
+            <form id="formlogin" method="POST" th:action="@{/login}"  th:object="${usuarioLogin}">
                 <p>
                     <label for="email">E-Mail:</label>
                     <input id="email" type="email"  value="" th:field="*{email}" placeholder=" ejemplo: usuario@ejemplo.com"  required!>

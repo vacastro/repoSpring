@@ -1,6 +1,7 @@
 package com.practica1.demobp.controller;
 
 import com.practica1.demobp.model.Usuario;
+import com.practica1.demobp.model.UsuarioLogin;
 import com.practica1.demobp.repository.UsuarioJpaRepository;
 
 import javax.validation.Valid;
@@ -21,25 +22,25 @@ public class LoginController {
 	UsuarioJpaRepository usuarioJpaRepository;
 
 	@GetMapping()
-	public String irAlLogin(Usuario usuario) {
+	public String irAlLogin(UsuarioLogin usuarioLogin) {
 
 		return "login";
 	}
 
 	@PostMapping()
-	public String comprobarLogin(Model model, @Valid Usuario usuario, BindingResult result) {
+	public String comprobarLogin(Model model, @Valid UsuarioLogin usuarioLogin, BindingResult result) {
 		if (result.hasErrors()) {
 			return "login";
 		}
 
-		String mailIngresado = usuario.getEmail();
-		String contraseniaIngresada = usuario.getContrasenia();
+		String mailIngresado = usuarioLogin.getEmail();
+		String contraseniaIngresada = usuarioLogin.getContrasenia();
 
 		Usuario usuarioEncontrado = usuarioJpaRepository.findByEmail(mailIngresado);
 
 		if (usuarioEncontrado == null) {
-			return "login";
-		}
+		return "login";
+	}
 
 		if (usuarioEncontrado.getContrasenia().equals(contraseniaIngresada)) {
 			model.addAttribute("email", usuarioEncontrado.getEmail());

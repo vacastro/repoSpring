@@ -118,13 +118,6 @@ import javax.validation.constraints.Size;
 		public void setContrasenia(String contrasenia) {
 			this.contrasenia = contrasenia;
 		}
-<<<<<<< HEAD
-		
-	
-=======
 
-
-
->>>>>>> 50f69f14462fefff32b2f573cc3b7aff42bdc39b
 	}
 		

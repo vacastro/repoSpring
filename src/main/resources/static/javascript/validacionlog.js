@@ -1,8 +1,8 @@
 window.addEventListener('load', function(){
               
     //detectar cuando toco el boton de registro (se envía el formulario)
-     var botonRegistro = document.getElementById("submit");
-     botonRegistro.addEventListener('click',function(){
+     var formLogin = document.getElementById("formlogin");
+     formLogin.addEventListener('click',function(event){
       
       //tomar los datos del formulario
         
@@ -75,8 +75,8 @@ window.addEventListener('load', function(){
             
         
       //si todo esta bien, le doy la bienvenida
-              if(!errores){
-                  alert("¡Tu Registro fue un éxito!")
+              if(errores){
+                  event.preventDefault();
               };
      
 

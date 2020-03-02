@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,26 +74,34 @@
     </div>
     <div class="row">
         <div class="formulario offset-md-3 col-md-6">
-            <form method="POST" id="formulario">
+            <form th:action="@{/registro}" method="POST" th:object="${usuario}">
                 <p>
                     <label for="nombre">Nombre</label>
-                    <input id="nombre" type="text" name="nombre" placeholder="Ingrese su nombre completo aquí..">
-                    <span style="color: #ffa81c; font-size: 11px;" class="errorNombre" ></span>
+                    <input id="nombre" type="text"  th:field="*{nombre}" placeholder="Ingrese su nombre completo aquí..">
+                    <span style="color: #ffa81c; font-size: 11px;" class="errorNombre" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></span>
+                    
                 </p>
                 <p>
                     <label for="email">E-Mail:</label>
-                    <input id="email" type="email" name="email" value="" placeholder="ejemplo: usuario@ejemplo.com" required!>
-                    <span style="color: #ffa81c; font-size: 11px;" class="errorEmail" ></span>
+                    <input id="email" type="email"  value="" th:field="*{email}" placeholder="ejemplo: usuario@ejemplo.com" required!>
+                    <span style="color: #ffa81c; font-size: 11px;" class="errorEmail" th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></span>
+                    
                 </p>
+                
+                
+              
+               
+                          
 
                 <p>
                     <label for="contraseña">Contraseña:</label>
-                    <input id="password" type="password" placeholder="Ingrese la contraseña" name="contrasenia">
-                    <span style="color: #ffa81c; font-size: 11px;" class="errorContrasenia2" ></span>
+                    <input id="password" type="password"  th:field="*{contrasenia}" placeholder="Ingrese la contraseña">
+                    <span style="color: #ffa81c; font-size: 11px;" class="errorContrasenia2" th:if="${#fields.hasErrors('contrasenia')}" th:errors="*{contrasenia}"></span>
+                  
                 </p>
                 <p>
                     <label for="confir pass">Confirmar Contraseña:</label>
-                    <input id="password_confirm" type="password" name="confir pass" placeholder="Confirme la contraseña">
+                    <input id="password_confirm" type="password" name="contrasenia" placeholder="Confirme la contraseña">
                     <span style="color: #ffa81c; font-size: 11px;" class="errorContrasenia" ></span>
                 </p>
                 <p>

@@ -1,7 +1,5 @@
 package com.practica1.demobp.model;
 
-//import com.practica1.demobp.model.Categoria;
-
 import javax.persistence.*;
 
 @Entity
@@ -32,11 +30,11 @@ public class Producto {
 
 	}
 
-	public Producto(Integer id/*, Categoria categoria*/, String nombre, Double precio, String descripcion, /*String caracteristicaId,*/
+	public Producto(Integer id, Categoria categoria, String nombre, Double precio, String descripcion, /*String caracteristicaId,*/
 			Boolean stockActivo) {
 		this.id = id;
 		this.nombre = nombre;
-		//this.categoria = categoria;
+		this.categoria = categoria;
 		this.precio = precio;
 		this.descripcion = descripcion;
 		//this.caracteristicaId = caracteristicaId;
@@ -59,13 +57,13 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	/*public Categoria getCategoria() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
-	}*/
+	}
 
 	public Double getPrecio() {
 		return precio;

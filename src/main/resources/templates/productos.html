@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,51 +78,12 @@
             <div class="col-12 col-md-12">
 
 
-                <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
+                <div th:each="unProducto : ${productos}" class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
                     <img src="imagenes/espejo-hp.jpg" class="card-img-top" alt="espejo harry">
                     <div class="card-body">
-                        <h5 class="card-title">Espejo Reliquia</h5>
-                        <p class="card-text">Espejo Reliquias de la muerte. Borde acero patinado. Único color y formato</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
-                    </div>
-                </div>
-                <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-                    <img src="imagenes/espejo-hp.jpg" class="card-img-top" alt="espejo harry">
-                    <div class="card-body">
-                        <h5 class="card-title">Espejo Reliquia</h5>
-                        <p class="card-text">Espejo Reliquias de la muerte. Borde acero patinado. Único color y formato</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
-                    </div>
-                </div>
-                <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-                    <img src="imagenes/espejo-hp.jpg" class="card-img-top" alt="espejo harry">
-                    <div class="card-body">
-                        <h5 class="card-title">Espejo Reliquia</h5>
-                        <p class="card-text">Espejo Reliquias de la muerte. Borde acero patinado. Único color y formato</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
-                    </div>
-                </div>
-                <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-                    <img src="imagenes/macetas-aereas.jpg" class="card-img-top" alt="macetas-aereas">
-                    <div class="card-body">
-                        <h5 class="card-title">Macetas de pared</h5>
-                        <p class="card-text">Macetas aéreas circulares de madera pintada, vienen en diversos colores</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
-                    </div>
-                </div>
-                <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-                    <img src="imagenes/macetas-aereas.jpg" class="card-img-top" alt="macetas-aereas">
-                    <div class="card-body">
-                        <h5 class="card-title">Macetas de pared</h5>
-                        <p class="card-text">Macetas aéreas circulares de madera pintada, vienen en diversos colores</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
-                    </div>
-                </div>
-                <div class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-                    <img src="imagenes/macetas-aereas.jpg" class="card-img-top" alt="macetas-aereas">
-                    <div class="card-body">
-                        <h5 class="card-title">Macetas de pared</h5>
-                        <p class="card-text">Macetas aéreas circulares de madera pintada, vienen en diversos coloreso</p>
+                        <h5 class="card-title" th:text="${unProducto.nombre}"></h5>
+                        <p class="card-text" th:text="${unProducto.descripcion}"></p>
+                        <p class="card-text" th:text="${unProducto.precio}"></p>
                         <a href="#" class="btn btn-primary">Agregar al carrito</a>
                     </div>
                 </div>

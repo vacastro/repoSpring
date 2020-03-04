@@ -48,8 +48,8 @@
     <div class="formulario offset-md-1 col-md-6">
       <p>
         <label for="inputCategoria">Categoría</label>
-        <select name="categoria_id" id="inputCategoria">
-          <option th:each="categoria:${categorias}" value="1" ></option>
+        <select name="categoria" id="inputCategoria">
+          <option th:each="categoria:${categorias}" th:text="${categoria.nombre}" th:value="${categoria.id}"></option>
         </select>
       </p>
     </div>

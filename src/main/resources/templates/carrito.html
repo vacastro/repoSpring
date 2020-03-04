@@ -24,6 +24,24 @@
             </div>
             <p class="parrafos">No tienes artículos en tu carrito de compras</p>
         </div>
+        <h1>Productos</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Descripción</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="productos : ${productos}">
+                <td th:text="${productos.nombre}"></td>
+                <td th:text="${productos.precio}"></td>
+                <td th:text="${productos.descripcion}"></td>
+
+            </tr>
+
         <div class="col-12 offset-sm-2 col-sm-8 offset-md-3 col-md-6 btn-carrito">
             <p class="parrafos">
                 <a href="productos"><input id="submit" type="button" value="Seguir comprando"></a>

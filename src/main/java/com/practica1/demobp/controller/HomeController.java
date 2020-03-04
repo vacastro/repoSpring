@@ -60,5 +60,10 @@ public class HomeController {
     return "contacto";
     }
 
+    @GetMapping("macetas")
+    public String getMacetas(){
+	    return "macetas";
+    }
+
 
 }

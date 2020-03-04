@@ -2,8 +2,14 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style2.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -20,6 +26,7 @@
         <th scope="col">Nombre</th>
         <th scope="col">Precio</th>
         <th scope="col">Descripción</th>
+        <th scope="col">Categoría</th>
         <th scope="col">Activo</th>
     </tr>
     </thead>
@@ -29,12 +36,16 @@
         <td th:text="${unProducto.nombre}"></td>
         <td th:text="${unProducto.precio}"></td>
         <td th:text="${unProducto.descripcion}"></td>
+        <td th:text="${unProducto.categoria.nombre}"></td>
         <td th:text="${unProducto.stockActivo}"></td>
 
     </tr>
     </tbody>
 </table>
-
+<br>
+    <div class="offset-md-1 col-md-6">
+        <a href="/producto/adm" style="color:#0eb999"><strong>Volver a ABM de productos</strong></a>
+    </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

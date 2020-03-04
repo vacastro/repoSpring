@@ -48,6 +48,9 @@ button p{
 background-color: white;
 border-bottom: 1px solid white;
 }
+div.card{
+width: 100%;
+}
 .question{
     background: white;
     border: white;

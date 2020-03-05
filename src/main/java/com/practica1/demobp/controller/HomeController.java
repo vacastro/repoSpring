@@ -16,17 +16,15 @@ public class HomeController {
     @Autowired
     private ProductoJpaRepository productoJpaRepository;
 	
-	@GetMapping("")
-	public String getIndex() {
-		return "index";
-	}
-	
-	//@GetMapping("login")
-	
-	//public String getLogin() {
-	//return "login";
+	//@GetMapping("")
+	//public String getIndex() {
+	//	return "index";
 	//}
-	
+
+    @GetMapping("index")
+    public String getIndexOther() {
+        return "index";
+    }
 
 	@GetMapping("carrito")
     public String getCarrito(){
@@ -42,11 +40,7 @@ public class HomeController {
     public String getNosotros(){
         return "nosotros";
     }
-    
-	//@GetMapping("registro")
-    //public String getRegistro(){
-    //return "registro";
-    //}
+
     
 	@GetMapping("productos")
     public String getProductos(Model model){
@@ -60,10 +54,45 @@ public class HomeController {
     return "contacto";
     }
 
-    @GetMapping("macetas")
+    @GetMapping("productos/macetas")
     public String getMacetas(){
 	    return "macetas";
     }
-
-
+    @GetMapping("macetas")
+    public String getIndexMacetas(){
+	    return "macetas";
+    }
+    @GetMapping("productos/coffetime")
+    public String getCoffetime(){
+        return "coffetime";
+    }
+    @GetMapping("coffetime")
+    public String getIndexCoffetime(){
+        return "coffetime";
+    }
+    @GetMapping("productos/cuadros")
+    public String getCuadros(){
+        return "cuadros";
+    }
+    @GetMapping("cuadros")
+    public String getIndexCuadros(){
+        return "cuadros";
+    }
+    @GetMapping("productos/espejos")
+    public String getEspejos(){
+        return "espejos";
+    }
+    @GetMapping("espejos")
+    public String getIndexEspejos(){
+        return "espejos";
+    }
+    @GetMapping("productos/almohadones")
+    public String getAlmohadones(){
+        return "almohadones";
+    }
+    @GetMapping("almohadones")
+    public String getIndexAlmohadones(){
+        return "almohadones";
+    }
+    
 }

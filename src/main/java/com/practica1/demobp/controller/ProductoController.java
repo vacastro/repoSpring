@@ -27,10 +27,6 @@ public class ProductoController {
 	@Autowired
 	private CategoriaJpaRepository categoriaJpaRepository;
 
-	//quiero inyectar CategoriaJpaRepository por el Autowired, pero me sugiere colocarlo como parámetro en la public
-	//class de ProductoController y cuando creo la lista aplicamdo el Model no llama los métodos que preciso
-	//La otra es que me sugiere hacerlo por constructor, pero no me cierra la idea
-	//Vale la pena hacer un "CategoriaController??" :S
 
 	@GetMapping ("adm")
 	public String getFormProductos(Model model, Producto producto) {

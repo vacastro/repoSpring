@@ -94,5 +94,5 @@ public class HomeController {
     public String getIndexAlmohadones(){
         return "almohadones";
     }
-    
+
 }

@@ -16,14 +16,17 @@ public class HomeController {
 
     @Autowired
     private ProductoJpaRepository productoJpaRepository;
-	
-	//@GetMapping("")
-	//public String getIndex() {
-	//	return "index";
-	//}
+	@GetMapping("")
+    public String getPrincipal(Model model){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
+	    return "index";
+    }
 
     @GetMapping("index")
-    public String getIndexOther() {
+    public String getIndexOther(Model model) {
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
         return "index";
     }
 

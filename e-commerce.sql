@@ -1,1 +1,0 @@
-SELECT * FROM clientes_ecommerce.clientes_ecommerce;

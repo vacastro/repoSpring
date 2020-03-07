@@ -3,6 +3,7 @@ package com.practica1.demobp.controller;
 import java.util.List;
 
 
+import com.practica1.demobp.model.Categoria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import com.practica1.demobp.model.Producto;
 import com.practica1.demobp.repository.ProductoJpaRepository;
+import com.practica1.demobp.repository.CategoriaJpaRepository;
+import org.thymeleaf.model.IModel;
 
 import javax.jws.WebParam;
 
@@ -21,11 +24,14 @@ import javax.jws.WebParam;
 public class ProductoController {
 	@Autowired
 	private ProductoJpaRepository productoJpaRepository;
-	
+	@Autowired
+	private CategoriaJpaRepository categoriaJpaRepository;
+
 
 	@GetMapping ("adm")
-	public String getFormProductos() {
-		//productoJpaRepository.jpqlFindByName();
+	public String getFormProductos(Model model, Producto producto) {
+		model.addAttribute("categorias", this.categoriaJpaRepository.findAll());
+
 		return "adm";
 	}
 

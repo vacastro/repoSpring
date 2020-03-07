@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-03-2020 a las 22:50:58
+-- Tiempo de generación: 04-03-2020 a las 19:56:49
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -29,7 +29,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `carrito` (
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `producto_id` int(11) DEFAULT NULL,
+  `usuario_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -43,6 +45,17 @@ CREATE TABLE `categoria` (
   `nombre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`id`, `nombre`) VALUES
+(1, 'Espejos'),
+(2, 'Macetas'),
+(3, 'Cuadros'),
+(4, 'Almohadones'),
+(5, 'CoffeTime');
+
 -- --------------------------------------------------------
 
 --
@@ -51,21 +64,10 @@ CREATE TABLE `categoria` (
 
 CREATE TABLE `clientes_ecommerce` (
   `id` int(11) NOT NULL,
-  `contrasenia` varchar(255) DEFAULT NULL,
+  `contrasenia` varchar(30) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
-  `nombre` varchar(255) DEFAULT NULL
+  `nombre` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `clientes_ecommerce`
---
-
-INSERT INTO `clientes_ecommerce` (`id`, `contrasenia`, `email`, `nombre`) VALUES
-(12, '12345678', 'mariaf.arenas@hotmail.com', 'fer'),
-(13, '1234555ed', 'ery_m87@hotmail.com', 'Eru'),
-(14, 'abcd1122', 'ana@hotmail.com', 'ana laura'),
-(16, 'fafa2525', 'fer@gmail.com', 'fer'),
-(18, 'titi2525', 'mfa@eru.com', 'Eru');
 
 -- --------------------------------------------------------
 
@@ -82,9 +84,9 @@ CREATE TABLE `hibernate_sequence` (
 --
 
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-(34),
-(34),
-(34);
+(1),
+(1),
+(1);
 
 -- --------------------------------------------------------
 
@@ -97,29 +99,21 @@ CREATE TABLE `producto` (
   `descripcion` varchar(255) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `precio` double NOT NULL,
-  `stock_activo` bit(1) NOT NULL
+  `stock_activo` bit(1) NOT NULL,
+  `categoria_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`id`, `descripcion`, `nombre`, `precio`, `stock_activo`) VALUES
-(19, 'Escandinava', 'silla', 1200, b'1'),
-(20, 'verde', 'mesa', 5000, b'1'),
-(21, 'Harry Potter - Reliquia', 'espejo', 1300, b'1'),
-(22, 'Juego de sillas', 'silla', 3500, b'1'),
-(23, 'Escandinava', 'silla', 3100, b'1'),
-(24, 'Escandinava', 'silla', 3100, b'1'),
-(25, 'Romana', 'silla', 3100, b'0'),
-(26, 'Roble', 'silla', 1200, b'0'),
-(27, 'Aéreas', 'Maceta', 800, b'1'),
-(28, 'Cerámica', 'Maceta', 600, b'0'),
-(29, 'Plástico', 'Maceta', 500, b'0'),
-(30, 'Plástico', 'Maceta', 500, b'0'),
-(31, 'GOT', 'Almohadon', 400, b'1'),
-(32, 'Maceta de piedra', 'Maceta', 800, b'0'),
-(33, 'GOT', 'Silla', 1600, b'0');
+INSERT INTO `producto` (`id`, `descripcion`, `nombre`, `precio`, `stock_activo`, `categoria_id`) VALUES
+(1, 'Almohadon Winterfell y Almohadon King\'s Landing', 'Almohadon - GOT', 1200, b'1', 4),
+(2, 'Maceta Aérea para pared con suculenta a elección', 'Maceta', 500, b'1', 2),
+(3, 'Espejo Reliquias de la muerte - Harry Potter', 'Espejo', 1300, b'1', 1),
+(4, 'Cuadro bastidor - Valar Morghulis - Valar Dohaeris', 'Cuadro - GOT', 1500, b'1', 3),
+(5, 'Juego de tazas con individuales de madera', 'Tazas de Café', 3100, b'1', 5),
+(6, 'Cuadro Estación 9 3-4 Harry Potter', 'Cuadro - HP', 1000, b'1', 3);
 
 --
 -- Índices para tablas volcadas
@@ -129,7 +123,9 @@ INSERT INTO `producto` (`id`, `descripcion`, `nombre`, `precio`, `stock_activo`)
 -- Indices de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKg0fspf9ac00r9i2m9wgmy4914` (`producto_id`),
+  ADD KEY `FK4dy7rgjpk9nb7wjj2odohg0wv` (`usuario_id`);
 
 --
 -- Indices de la tabla `categoria`
@@ -148,7 +144,8 @@ ALTER TABLE `clientes_ecommerce`
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKodqr7965ok9rwquj1utiamt0m` (`categoria_id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -159,6 +156,23 @@ ALTER TABLE `producto`
 --
 ALTER TABLE `carrito`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  ADD CONSTRAINT `FK4dy7rgjpk9nb7wjj2odohg0wv` FOREIGN KEY (`usuario_id`) REFERENCES `clientes_ecommerce` (`id`),
+  ADD CONSTRAINT `FKg0fspf9ac00r9i2m9wgmy4914` FOREIGN KEY (`producto_id`) REFERENCES `producto` (`id`);
+
+--
+-- Filtros para la tabla `producto`
+--
+ALTER TABLE `producto`
+  ADD CONSTRAINT `FKodqr7965ok9rwquj1utiamt0m` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

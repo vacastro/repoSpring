@@ -15,14 +15,10 @@ import java.util.List;
 	@Table(name = "usuario")
 	public class Usuario {
 		@Id
-		@GeneratedValue(strategy=GenerationType.AUTO)//tuve un tema con el auto-incremental. En el postman debía colocar el id manualmente, no se generaba solo. Cuando colocaba "strategy = IDENTITY o AUTO, me tiraba error :(
+		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		private Integer id;
 		
-		
-		
-
-
-
+	
 		@Column(nullable = false,unique = true)
 		@NotBlank (message="el Email no puede tener espacios")
 		@Email(message="el formato es incorrecto")

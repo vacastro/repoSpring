@@ -1,4 +1,4 @@
-package com.practica1.demobp.model;
+	package com.practica1.demobp.model;
 
 import javax.persistence.*;
 
@@ -16,7 +16,7 @@ public class Carrito {
     @JoinColumn(name = "producto_id")
     private Producto producto;
 
-    /*public Carrito() {
+    public Carrito() {
     }
 
     public Carrito(Integer id, Usuario usuario, Producto producto) {
@@ -47,5 +47,5 @@ public class Carrito {
 
     public void setProducto(Producto producto) {
         this.producto = producto;
-    }*/
+    }
 }

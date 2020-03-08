@@ -12,7 +12,7 @@ import java.util.List;
 
 
 	@Entity
-	@Table(name = "clientes_ecommerce")
+	@Table(name = "usuario")
 	public class Usuario {
 		@Id
 		@GeneratedValue(strategy=GenerationType.AUTO)//tuve un tema con el auto-incremental. En el postman debía colocar el id manualmente, no se generaba solo. Cuando colocaba "strategy = IDENTITY o AUTO, me tiraba error :(
@@ -53,7 +53,7 @@ import java.util.List;
 				inverseJoinColumns = @JoinColumn(name= "producto_id", nullable = false)
 		)
 		@ManyToMany( cascade = CascadeType.ALL)
-		private List<Producto> productos;
+		private List<Producto> carrito;
 		//private Boolean activo;
 		
 		//como validar el confirmar contrasenia con spring
@@ -73,7 +73,7 @@ import java.util.List;
 			this.email = email;
 			this.nombre = nombre;
 			this.contrasenia = contrasenia;
-			this.productos= new ArrayList<>();
+			this.carrito= new ArrayList<Producto>();
 		}
 
 
@@ -129,27 +129,42 @@ import java.util.List;
 			this.contrasenia = contrasenia;
 		}
 
-		public void setProductos(List<Producto> productos) {
-			this.productos = productos;
+
+
+
+		public List<Producto> getCarrito() {
+			return carrito;
 		}
 
-		public List<Producto> getProductos(){
-			return this.productos;
+
+
+
+		public void setCarrito(List<Producto> carrito) {
+			this.carrito = carrito;
 		}
+
+
 
 
 		public void agregarAlCarrito(Producto unProducto){
-			this.productos.add(unProducto);
+			
+			if(this.carrito == null) {
+				this.carrito = new ArrayList<>();
+				
+			}
+			
+			this.carrito.add(unProducto);	
+			
 		}
 
 		public void eliminarProdCarrito(Integer id){
 			Producto prod = null;
-			for(Producto unProducto: this.productos){
+			for(Producto unProducto: this.carrito){
 				if(unProducto.getId().equals(id)){
 					prod= unProducto;
 					break;
 				}
-			} this.productos.remove(prod);
+			} this.carrito.remove(prod);
 		}
 
 

@@ -1,6 +1,8 @@
 package com.practica1.demobp.model;
 
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -12,9 +14,7 @@ public class Producto {
 	@GeneratedValue
 	private Integer id;
 	
-	@OneToOne
-	@JoinColumn(name = "categoria_id")
-	private Categoria categoria;
+
 	@Column(nullable = false)
 	private String nombre;
 
@@ -45,17 +45,49 @@ public class Producto {
 
 	
 
-	public Producto(Integer id, Categoria categoria, String nombre, Double precio, String descripcion,
-			Boolean stockActivo, String urlImage) {
+
+
+
+	public Producto(Integer id, String nombre, Double precio, String descripcion, Boolean stockActivo, String urlImage,
+			Categoria categoria_id, List<Usuario> usuarios) {
 		super();
 		this.id = id;
-		this.categoria = categoria;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.descripcion = descripcion;
 		this.stockActivo = stockActivo;
 		this.urlImage = urlImage;
+		this.categoria_id = categoria_id;
+		this.usuarios = new ArrayList<>();
 	}
+
+
+
+
+
+
+	public Categoria getCategoria_id() {
+		return categoria_id;
+	}
+
+
+
+
+
+
+	public void setCategoria_id(Categoria categoria_id) {
+		this.categoria_id = categoria_id;
+	}
+
+
+
+
+
+
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
 
 
 
@@ -75,13 +107,7 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	public Categoria getCategoria() {
-		return categoria;
-	}
 
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
 
 	public Double getPrecio() {
 		return precio;

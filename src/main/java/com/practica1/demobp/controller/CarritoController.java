@@ -34,7 +34,7 @@ public class CarritoController {
         return "productos";
     }
 
-    @PostMapping("agregarAlCarrito/{producto_id}")
+    @PostMapping("/agregarAlCarrito/{producto_id}")
     public String addProduct(@PathVariable("producto_id") Integer producto_id){
         Optional<Producto> opt1 = this.productoJpaRepository.findById(producto_id);
        Producto producto = opt1.get();
@@ -44,16 +44,16 @@ public class CarritoController {
         usuarioJpaRepository.save(usuario);
         
 
-        return "redirect:/carrito/";
+        return "carrito";
     }
     
-    @GetMapping("")
+    @GetMapping("show")
     public String show(Model model) {
-    	Optional<Usuario> opt = usuarioJpaRepository.findById((Integer) 1);
+    	Optional<Usuario> opt = usuarioJpaRepository.findById((Integer) 2);
     	
     	Usuario usuario = opt.get();
     	
-    	List<Producto> carrito = usuario.getProductos();
+    	List<Producto> carrito = usuario.getCarrito();
     	
     	model.addAttribute("carrito", carrito);
     	

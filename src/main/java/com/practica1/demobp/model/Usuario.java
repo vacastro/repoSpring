@@ -49,7 +49,8 @@ import java.util.List;
 
 		@JoinTable(
 				name= "carrito",
-				joinColumns = @JoinColumn
+				joinColumns = @JoinColumn(name= "usuario_id", nullable = false),
+				inverseJoinColumns = @JoinColumn(name= "producto_id", nullable = false)
 		)
 		@ManyToMany( cascade = CascadeType.ALL)
 		private List<Producto> productos;

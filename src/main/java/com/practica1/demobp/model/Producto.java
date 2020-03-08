@@ -1,6 +1,7 @@
 package com.practica1.demobp.model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -29,6 +30,14 @@ public class Producto {
 	
 	@Column(nullable = false)
 	private String urlImage;
+
+	@ManyToOne
+	@JoinColumn(name = "categoria_id")
+	private Categoria categoria_id;
+
+	@ManyToMany (mappedBy = "carrito")
+	private List<Usuario> usuarios;
+
 
 	public Producto() {
 

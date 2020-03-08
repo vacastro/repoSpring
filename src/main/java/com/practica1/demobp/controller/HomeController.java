@@ -2,6 +2,7 @@ package com.practica1.demobp.controller;
 
 import com.practica1.demobp.model.Producto;
 import com.practica1.demobp.repository.ProductoJpaRepository;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,8 +16,8 @@ public class HomeController {
 
     @Autowired
     private ProductoJpaRepository productoJpaRepository;
-	
 	@GetMapping("")
+<<<<<<< HEAD
 	public String getIndex() {
 		return "index";
 	}
@@ -32,6 +33,20 @@ public class HomeController {
 	//return "login";
 	//}
 	
+=======
+    public String getPrincipal(Model model){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
+	    return "index";
+    }
+
+    @GetMapping("index")
+    public String getIndexOther(Model model) {
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
+        return "index";
+    }
+>>>>>>> 7343b22a95ede1da1caa071a30a0a3730fb87a55
 
 	@GetMapping("carrito")
     public String getCarrito(){
@@ -47,11 +62,7 @@ public class HomeController {
     public String getNosotros(){
         return "nosotros";
     }
-    
-	//@GetMapping("registro")
-    //public String getRegistro(){
-    //return "registro";
-    //}
+
     
 	@GetMapping("productos")
     public String getProductos(Model model){
@@ -65,10 +76,69 @@ public class HomeController {
     return "contacto";
     }
 
-    @GetMapping("macetas")
-    public String getMacetas(){
+    @GetMapping("productos/macetas")
+    public String getMacetas(Model model){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll(); //modificar por cada categoria, es decir, iterar cada producto en si, segun clasificación en base de datos
+        model.addAttribute("productos", listaProductos);
 	    return "macetas";
     }
 
+    @GetMapping("macetas")
+    public String getIndexMacetas(Model model){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
+	    return "macetas";
+    }
+
+    @GetMapping("productos/coffetime")
+    public String getCoffetime(Model model){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
+        return "coffetime";
+    }
+    @GetMapping("coffetime")
+    public String getIndexCoffetime(Model model){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
+        return "coffetime";
+    }
+    @GetMapping("productos/cuadros")
+    public String getCuadros(Model model){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
+        return "cuadros";
+    }
+
+    @GetMapping("cuadros")
+    public String getIndexCuadros(Model model){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
+        return "cuadros";
+    }
+
+    @GetMapping("productos/espejos")
+    public String getEspejos(Model model){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
+        return "espejos";
+    }
+    @GetMapping("espejos")
+    public String getIndexEspejos(Model model){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
+        return "espejos";
+    }
+    @GetMapping("productos/almohadones")
+    public String getAlmohadones(Model model){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
+        return "almohadones";
+    }
+    @GetMapping("almohadones")
+    public String getIndexAlmohadones(Model model){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
+        return "almohadones";
+    }
 
 }

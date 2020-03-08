@@ -5,6 +5,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 //import javax.validation.constraints.Pattern;
 
@@ -42,6 +44,9 @@ import javax.validation.constraints.Size;
 		@NotBlank (message="la contraseña no puede ser espacios")
 		@NotEmpty (message="la contraseña no puede estar vacio")
 		private String contrasenia;
+
+		@ManyToMany
+		private List<Producto> productos;
 		//private Boolean activo;
 		
 		//como validar el confirmar contrasenia con spring
@@ -61,6 +66,7 @@ import javax.validation.constraints.Size;
 			this.email = email;
 			this.nombre = nombre;
 			this.contrasenia = contrasenia;
+			this.productos= new ArrayList<>();
 		}
 
 
@@ -117,6 +123,25 @@ import javax.validation.constraints.Size;
 		public void setContrasenia(String contrasenia) {
 			this.contrasenia = contrasenia;
 		}
+
+		public void agregarAlCarrito(Producto unProducto){
+			this.productos.add(unProducto);
+		}
+
+		public void eliminarProdCarrito(Integer id){
+			Producto prod = null;
+			for(Producto unProducto: this.productos){
+				if(unProducto.getId().equals(id)){
+					prod= unProducto;
+					break;
+				}
+			} this.productos.remove(prod);
+		}
+
+		public List<Producto> getProductos(){
+			return this.productos;
+		}
+
 
 	}
 		

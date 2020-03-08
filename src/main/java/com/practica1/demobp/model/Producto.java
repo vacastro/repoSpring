@@ -1,6 +1,7 @@
 package com.practica1.demobp.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 
@@ -105,6 +106,7 @@ public class Producto {
 		this.stockActivo = stockActivo;
 	}
 
+<<<<<<< HEAD
 
 
 	public String getUrlImage() {
@@ -118,5 +120,19 @@ public class Producto {
 	}
 	
 	
+=======
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Producto producto = (Producto) o;
+		return id.equals(producto.id);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+>>>>>>> 7343b22a95ede1da1caa071a30a0a3730fb87a55
 
 }

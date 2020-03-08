@@ -40,7 +40,7 @@ public class HomeController {
 	    return "index";
     }
 
-    @GetMapping("index")
+    @GetMapping("add")
     public String getIndexOther(Model model) {
         List<Producto> listaProductos = this.productoJpaRepository.findAll();
         model.addAttribute("productos", listaProductos);

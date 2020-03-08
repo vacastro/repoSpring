@@ -44,6 +44,8 @@ import java.util.List;
 		@NotBlank (message="la contraseña no puede ser espacios")
 		@NotEmpty (message="la contraseña no puede estar vacio")
 		private String contrasenia;
+		
+	
 
 		@ManyToMany
 		private List<Producto> productos;

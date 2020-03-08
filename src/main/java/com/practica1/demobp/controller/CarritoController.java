@@ -57,7 +57,7 @@ public class CarritoController {
     	
     	model.addAttribute("productos", carrito);
     	
-    	return "carrito";
+    	return "Redirect:/carrito/";
     }
 
 }

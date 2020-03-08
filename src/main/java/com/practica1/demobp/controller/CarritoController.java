@@ -38,18 +38,18 @@ public class CarritoController {
     public String addProduct(@PathVariable("producto_id") Integer producto_id){
         Optional<Producto> opt1 = this.productoJpaRepository.findById(producto_id);
        Producto producto = opt1.get();
-        Optional<Usuario> opt = usuarioJpaRepository.findById((Integer)2);
+        Optional<Usuario> opt = usuarioJpaRepository.findById((Integer)1);
         Usuario usuario = opt.get();
         usuario.agregarAlCarrito(producto);
         usuarioJpaRepository.save(usuario);
         
 
-        return "Redirect:/carrito/";
+        return "carrito";
     }
     
-    @GetMapping("show")
+    @GetMapping("/agregarAlCarrito/{producto_id}")
     public String show(Model model) {
-    	Optional<Usuario> opt = usuarioJpaRepository.findById((Integer) 2);
+    	Optional<Usuario> opt = usuarioJpaRepository.findById((Integer) 1);
     	
     	Usuario usuario = opt.get();
     	

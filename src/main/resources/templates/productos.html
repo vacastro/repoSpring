@@ -96,7 +96,7 @@
                         <h5 class="card-title" th:text="${unProducto.nombre}"></h5>
                         <p class="card-text" th:text="${unProducto.descripcion}"></p>
                         <p class="card-text" th:text="${unProducto.precio}"></p>
-                        <form method="post" th:action="${'/cart/agregarAlCarrito/'} + ${unProducto.id}">
+                        <form method="post" th:action="@{'/cart/agregarAlCarrito/' + ${unProducto.id}}">
                         <button type="submit" class="btn btn-primary">Agregar al carrito</button>
                         </form>
                     </div>

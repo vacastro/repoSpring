@@ -47,7 +47,11 @@ import java.util.List;
 		
 	
 
-		@ManyToMany
+		@JoinTable(
+				name= "carrito",
+				joinColumns = @JoinColumn
+		)
+		@ManyToMany( cascade = CascadeType.ALL)
 		private List<Producto> productos;
 		//private Boolean activo;
 		
@@ -120,11 +124,18 @@ import java.util.List;
 			return contrasenia;
 		}
 
-
-
 		public void setContrasenia(String contrasenia) {
 			this.contrasenia = contrasenia;
 		}
+
+		public void setProductos(List<Producto> productos) {
+			this.productos = productos;
+		}
+
+		public List<Producto> getProductos(){
+			return this.productos;
+		}
+
 
 		public void agregarAlCarrito(Producto unProducto){
 			this.productos.add(unProducto);
@@ -140,9 +151,7 @@ import java.util.List;
 			} this.productos.remove(prod);
 		}
 
-		public List<Producto> getProductos(){
-			return this.productos;
-		}
+
 
 
 	}

@@ -6,7 +6,7 @@
  <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
->>>>>>> 46220b94c7671bda6703355f4e8af59e1454fb67
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -73,7 +73,7 @@
     </div>
 </header>
 
->>>>>>> 46220b94c7671bda6703355f4e8af59e1454fb67
+
 <section class="products">
     <div class="encabezado"style="margin-top:120px;">
         <nav aria-label="breadcrumb">
@@ -88,9 +88,11 @@
             <div class="col-12 col-md-12">
 
 
-                <div th:each="unProducto : ${productos}" class="productcard card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-                    <img src="imagenes/espejo-hp.jpg" class="card-img-top" alt="espejo harry">
-                    <div class="card-body">
+
+                <div th:each="unProducto : ${productos}" class="card col-12 col-sm-6 col-md-4" style="width: 18rem;">
+                    <img th:src="${unProducto.urlImage}"  class="card-img-top" alt="IMAGEN">
+
+                   <div class="card-body">
                         <h5 class="card-title" th:text="${unProducto.nombre}"></h5>
                         <p class="card-text" th:text="${unProducto.descripcion}"></p>
                         <p class="card-text" th:text="${unProducto.precio}"></p>

@@ -13,8 +13,7 @@
 	<title>Wabi-Sabi Deco</title>
 </head>
 <body>
-<<<<<<< HEAD
-=======
+
 	<header>
 		<div class="row">
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -68,7 +67,7 @@
 			</nav>
 		</div>
 	</header>
->>>>>>> 46220b94c7671bda6703355f4e8af59e1454fb67
+
 	<div class="bd-example">
 		<div id="carouselExampleCaptions" class="carousel slide"
 			data-ride="carousel">
@@ -134,66 +133,18 @@
 				<div class="col-12 col-md-12">
 
 
-					<div class="productcard card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-						<img src="imagenes/espejo-hp.jpg" class="card-img-top"
-							alt="espejo harry">
+					<div th:each="unProducto : ${productos}" class="productcard card col-12 col-sm-6 col-md-4" style="width: 18rem;">
+						<img src="../imagenes/espejo-hp.jpg" class="card-img-top" alt="espejo harry">
 						<div class="card-body">
-							<h5 class="card-title">Espejo Reliquia</h5>
-							<p class="card-text">Espejo Reliquias de la muerte. Borde
-								acero patinado. Único color y formato</p>
-							<a href="#" class="btn btn-primary">Agregar al carrito</a>
+							<h5 class="card-title" th:text="${unProducto.nombre}"></h5>
+							<p class="card-text" th:text="${unProducto.descripcion}"></p>
+							<p class="card-text" th:text="${unProducto.precio}"></p>
+							<form method="post" th:action="${'/cart/agregarAlCarrito/'} + ${unProducto.id}">
+								<button type="submit" class="btn btn-primary">Agregar al carrito</button>
+							</form>
 						</div>
 					</div>
-					<div class="productcard card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-						<img src="imagenes/espejo-hp.jpg" class="card-img-top"
-							alt="espejo harry">
-						<div class="card-body">
-							<h5 class="card-title">Espejo Reliquia</h5>
-							<p class="card-text">Espejo Reliquias de la muerte. Borde
-								acero patinado. Único color y formato</p>
-							<a href="#" class="btn btn-primary">Agregar al carrito</a>
-						</div>
-					</div>
-					<div class="productcard card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-						<img src="imagenes/espejo-hp.jpg" class="card-img-top"
-							alt="espejo harry">
-						<div class="card-body">
-							<h5 class="card-title">Espejo Reliquia</h5>
-							<p class="card-text">Espejo Reliquias de la muerte. Borde
-								acero patinado. Único color y formato</p>
-							<a href="#" class="btn btn-primary">Agregar al carrito</a>
-						</div>
-					</div>
-					<div class="productcard card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-						<img src="imagenes/espejo-hp.jpg" class="card-img-top"
-							alt="espejo harry">
-						<div class="card-body">
-							<h5 class="card-title">Espejo Reliquia</h5>
-							<p class="card-text">Espejo Reliquias de la muerte. Borde
-								acero patinado. Único color y formato</p>
-							<a href="#" class="btn btn-primary">Agregar al carrito</a>
-						</div>
-					</div>
-					<div class="productcard card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-						<img src="imagenes/espejo-hp.jpg" class="card-img-top"
-							alt="espejo harry">
-						<div class="card-body">
-							<h5 class="card-title">Espejo Reliquia</h5>
-							<p class="card-text">Espejo Reliquias de la muerte. Borde
-								acero patinado. Único color y formato</p>
-							<a href="#" class="btn btn-primary">Agregar al carrito</a>
-						</div>
-					</div>
-					<div class="productcard card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-						<img src="imagenes/espejo-hp.jpg" class="card-img-top"
-							alt="espejo harry">
-						<div class="card-body">
-							<h5 class="card-title">Espejo Reliquia</h5>
-							<p class="card-text">Espejo Reliquias de la muerte. Borde
-								acero patinado. Único color y formato</p>
-							<a href="#" class="btn btn-primary">Agregar al carrito</a>
-						</div>
-					</div>
+
 
 				</div>
 			</div>

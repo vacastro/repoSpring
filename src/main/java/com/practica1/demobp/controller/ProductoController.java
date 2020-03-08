@@ -1,5 +1,6 @@
 package com.practica1.demobp.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,8 +30,8 @@ public class ProductoController {
 
 
 	@GetMapping ("adm")
-	public String getFormProductos(Model model, Producto producto) {
-		model.addAttribute("categorias", this.categoriaJpaRepository.findAll());
+	public String getFormProductos() {
+
 
 		return "adm";
 	}
@@ -52,5 +53,19 @@ public class ProductoController {
 		productoJpaRepository.save(ProductoARegistrar);
 		return "adm";
 	}
+	
+	//public List<Producto> getProductos(Producto unProducto){
+	//	List<Producto> productos = new ArrayList<>();
+		
+	//	productos.add(unProducto);
+	
+	//@GetMapping ("adm")
+	//public String getFormProductos(Model model, Producto producto) {
+	//	model.addAttribute("categorias", this.categoriaJpaRepository.findAll());
 
-}
+	//	return "adm";
+	//}
+
+		
+	}
+

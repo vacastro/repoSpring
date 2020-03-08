@@ -25,21 +25,29 @@ public class Producto {
 	//private String caracteristicaId;
 	@Column(nullable = false)
 	private Boolean stockActivo;
+	
+	@Column(nullable = false)
+	private String urlImage;
 
 	public Producto() {
 
 	}
 
-	public Producto(Integer id, Categoria categoria, String nombre, Double precio, String descripcion, /*String caracteristicaId,*/
-			Boolean stockActivo) {
+	
+
+	public Producto(Integer id, Categoria categoria, String nombre, Double precio, String descripcion,
+			Boolean stockActivo, String urlImage) {
+		super();
 		this.id = id;
-		this.nombre = nombre;
 		this.categoria = categoria;
+		this.nombre = nombre;
 		this.precio = precio;
 		this.descripcion = descripcion;
-		//this.caracteristicaId = caracteristicaId;
 		this.stockActivo = stockActivo;
+		this.urlImage = urlImage;
 	}
+
+
 
 	public Integer getId() {
 		return id;
@@ -96,5 +104,19 @@ public class Producto {
 	public void setStockActivo(Boolean stockActivo) {
 		this.stockActivo = stockActivo;
 	}
+
+
+
+	public String getUrlImage() {
+		return urlImage;
+	}
+
+
+
+	public void setUrlImage(String urlImage) {
+		this.urlImage = urlImage;
+	}
+	
+	
 
 }

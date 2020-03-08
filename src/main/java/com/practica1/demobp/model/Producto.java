@@ -106,7 +106,7 @@ public class Producto {
 		this.stockActivo = stockActivo;
 	}
 
-<<<<<<< HEAD
+
 
 
 	public String getUrlImage() {
@@ -120,7 +120,7 @@ public class Producto {
 	}
 	
 	
-=======
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -133,6 +133,6 @@ public class Producto {
 	public int hashCode() {
 		return Objects.hash(id);
 	}
->>>>>>> 7343b22a95ede1da1caa071a30a0a3730fb87a55
+
 
 }

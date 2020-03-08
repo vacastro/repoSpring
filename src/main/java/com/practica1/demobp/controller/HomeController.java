@@ -16,24 +16,15 @@ public class HomeController {
 
     @Autowired
     private ProductoJpaRepository productoJpaRepository;
-	@GetMapping("")
 
-	public String getIndex() {
-		return "index";
-	}
 	
 	@GetMapping("index")
-	public String getHome() {
+	public String getHome(Model model) {
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+        model.addAttribute("productos", listaProductos);
 		return "index";
 	}
-	
-	//@GetMapping("login")
-	
-	//public String getLogin() {
-	//return "login";
-	//}
-	
-
+	@GetMapping("")
     public String getPrincipal(Model model){
         List<Producto> listaProductos = this.productoJpaRepository.findAll();
         model.addAttribute("productos", listaProductos);
@@ -139,6 +130,11 @@ public class HomeController {
         List<Producto> listaProductos = this.productoJpaRepository.findAll();
         model.addAttribute("productos", listaProductos);
         return "almohadones";
+    }
+    @GetMapping("addCart")
+    public String getCarritoDos (){
+
+        return "carritoCompl";
     }
 
 }

@@ -44,10 +44,10 @@ public class CarritoController {
         usuarioJpaRepository.save(usuario);
         
 
-        return "Redirect:/carrito/";
+        return "carrito";
     }
     
-    @GetMapping("show")
+    @GetMapping("/agregarAlCarrito/{producto_id}")
     public String show(Model model) {
     	Optional<Usuario> opt = usuarioJpaRepository.findById((Integer) 2);
     	

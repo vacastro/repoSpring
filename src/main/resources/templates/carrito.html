@@ -28,13 +28,24 @@
                 <tr>
                     <th scope="col">Nombre</th>
                     <th scope="col">Precio</th>
+                    <th scope="col">Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="unProducto : ${carritos}">
                     <td th:text="${unProducto.nombre}"></td>
                     <td th:text="${unProducto.precio}"></td>
+                    <td>
+                        <form th:action="@{/carrito/eliminar}" method="post">
+                            <input type="hidden" name="id" th:value="${unProducto.id}"/>
+                            <button type="submit" class="btn btn-danger">Eliminar <i class="fa fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
+
+
+
                 </tbody>
             </table>
         </div>

@@ -23,6 +23,7 @@ public class CarritoController {
     @Autowired
     ProductoJpaRepository productoJpaRepository ;
 
+
     @GetMapping("")
     public String show(Model model) {
         Optional<Usuario> opt = usuarioJpaRepository.findById((Integer) 1);
@@ -56,6 +57,14 @@ public class CarritoController {
 
         return "redirect:/productos";
     }
-    
+    @PostMapping("/eliminar")
+    public String eliminarProducto(@ModelAttribute Producto producto, RedirectAttributes redirectAttrs) {
+        redirectAttrs.addFlashAttribute("mensaje", "Eliminado correctamente");
+        Optional<Usuario> opt3 = usuarioJpaRepository.findById((Integer)1);
+        Usuario usuario = opt3.get();
+        usuario.eliminarProdCarrito(producto.getId());
+
+        return "carrito";
+    }
 
 }

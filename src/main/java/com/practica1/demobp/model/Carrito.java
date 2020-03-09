@@ -2,11 +2,10 @@
 
 import javax.persistence.*;
 
-@Entity
 
 public class Carrito {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne
     @JoinColumn(name = "usuario_id")

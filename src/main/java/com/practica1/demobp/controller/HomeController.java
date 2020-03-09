@@ -51,8 +51,8 @@ public class HomeController {
 
     
 	@GetMapping("productos")
-    public String getProductos(Model model,@RequestParam("categoria") String categoria){
-        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+    public String getProductos(Model model, @RequestParam(name = "categoria",required = false) String categoria){
+        List<Producto> listaProductos = null;
 
         if ( categoria == null || categoria.isEmpty() ){
             listaProductos  = this.productoJpaRepository.findAll();

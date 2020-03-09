@@ -67,7 +67,7 @@ public class CarritoController {
 
         carritoJpaRepository.deleteProductoById(usuario.getId(),producto.getId());
 
-        return "carrito";
+        return "redirect:/carrito";
     }
 
 }

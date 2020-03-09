@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("cart")
+@RequestMapping("carrito")
 
 public class CarritoController {
 
@@ -26,9 +26,20 @@ public class CarritoController {
     ProductoJpaRepository productoJpaRepository ;
 
     @GetMapping("")
-    public String GetCarrito(){
-        return "carrito";
+    public String show(Model model) {
+        Optional<Usuario> opt = usuarioJpaRepository.findById((Integer) 1);
+
+        Usuario usuario = opt.get();
+
+        List<Producto> carrito = usuario.getCarrito();
+
+        model.addAttribute("carritos", carrito);
+
+        return "/carrito";
     }
+
+
+
     @GetMapping("agregarAlCarrito")
     public String getAddProduct(){
         return "productos";
@@ -47,17 +58,5 @@ public class CarritoController {
         return "redirect:/productos";
     }
     
-    @GetMapping("/carrito")
-    public String show(Model model) {
-    	Optional<Usuario> opt = usuarioJpaRepository.findById((Integer) 1);
-    	
-    	Usuario usuario = opt.get();
-    	
-    	List<Producto> carrito = usuario.getCarrito();
-    	
-    	model.addAttribute("productos", carrito);
-    	
-    	return "Redirect:/carrito";
-    }
 
 }

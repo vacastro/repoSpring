@@ -2,7 +2,6 @@ package com.practica1.demobp.controller;
 
 import com.practica1.demobp.model.Producto;
 import com.practica1.demobp.repository.ProductoJpaRepository;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,11 +37,6 @@ public class HomeController {
         return "index";
     }
 
-
-	@GetMapping("carrito")
-    public String getCarrito(){
-        return "carrito";
-    }
     
 	@GetMapping("faq")
     public String getFaq(){
@@ -130,11 +124,6 @@ public class HomeController {
         List<Producto> listaProductos = this.productoJpaRepository.findAll();
         model.addAttribute("productos", listaProductos);
         return "almohadones";
-    }
-    @GetMapping("addCart")
-    public String getCarritoDos (){
-
-        return "carritoCompl";
     }
 
 }

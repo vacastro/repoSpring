@@ -26,6 +26,7 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioJpaRepository usuarioJpaRepository;
 
+
 	@GetMapping("usuario")
 		public List<Usuario> getUsuarios() {
 		List<Usuario> usuarios = usuarioJpaRepository.findAll();

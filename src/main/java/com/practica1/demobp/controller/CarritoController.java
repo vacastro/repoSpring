@@ -2,6 +2,7 @@ package com.practica1.demobp.controller;
 
 import com.practica1.demobp.model.Producto;
 import com.practica1.demobp.model.Usuario;
+import com.practica1.demobp.repository.CarritoJpaRepository;
 import com.practica1.demobp.repository.ProductoJpaRepository;
 import com.practica1.demobp.repository.UsuarioJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,8 @@ public class CarritoController {
     UsuarioJpaRepository usuarioJpaRepository;
     @Autowired
     ProductoJpaRepository productoJpaRepository ;
-
+    @Autowired
+    private CarritoJpaRepository carritoJpaRepository;
 
     @GetMapping("")
     public String show(Model model) {
@@ -36,8 +38,6 @@ public class CarritoController {
 
         return "/carrito";
     }
-
-
 
     @GetMapping("agregarAlCarrito")
     public String getAddProduct(){
@@ -53,16 +53,19 @@ public class CarritoController {
         usuario.agregarAlCarrito(producto);
         usuarioJpaRepository.save(usuario);
         redirectAttrs.addFlashAttribute("mensaje", "Su producto ha sido agregado correctamente al carrito");
-        
+
 
         return "redirect:/productos";
     }
+
     @PostMapping("/eliminar")
     public String eliminarProducto(@ModelAttribute Producto producto, RedirectAttributes redirectAttrs) {
         redirectAttrs.addFlashAttribute("mensaje", "Eliminado correctamente");
-        Optional<Usuario> opt3 = usuarioJpaRepository.findById((Integer)1);
+        Optional<Usuario> opt3 = usuarioJpaRepository.findById(1);
         Usuario usuario = opt3.get();
-        usuario.eliminarProdCarrito(producto.getId());
+
+
+        carritoJpaRepository.deleteProductoById(usuario.getId(),producto.getId());
 
         return "carrito";
     }

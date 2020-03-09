@@ -33,7 +33,7 @@ public class Producto {
 
 	@ManyToOne
 	@JoinColumn(name = "categoria_id")
-	private Categoria categoria_id;
+	private Categoria categoria;
 
 	@ManyToMany (mappedBy = "carrito")
 	private List<Usuario> usuarios;
@@ -57,32 +57,18 @@ public class Producto {
 		this.descripcion = descripcion;
 		this.stockActivo = stockActivo;
 		this.urlImage = urlImage;
-		this.categoria_id = categoria_id;
+		this.categoria = categoria_id;
 		this.usuarios = new ArrayList<>();
 	}
 
 
-
-
-
-
-	public Categoria getCategoria_id() {
-		return categoria_id;
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
-
-
-
-
-
-	public void setCategoria_id(Categoria categoria_id) {
-		this.categoria_id = categoria_id;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
-
-
-
-
-
 
 	public List<Usuario> getUsuarios() {
 		return usuarios;

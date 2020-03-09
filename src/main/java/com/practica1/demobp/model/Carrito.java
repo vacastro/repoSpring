@@ -2,7 +2,7 @@
 
 import javax.persistence.*;
 
-
+@Entity
 public class Carrito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

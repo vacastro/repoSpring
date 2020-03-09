@@ -16,5 +16,7 @@ public interface ProductoJpaRepository extends JpaRepository<Producto, Integer>{
     //@Query ("select name from producto where producto.name is :name")
     //List<Producto> jpqlFindByName(@Param("name")String name);
 
+    List<Producto> findAllByCategoria_nombre(String categoria);
+
     //void jpqlFindByName();
 }

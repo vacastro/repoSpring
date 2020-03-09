@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -50,8 +51,15 @@ public class HomeController {
 
     
 	@GetMapping("productos")
-    public String getProductos(Model model){
-	    List<Producto> listaProductos = this.productoJpaRepository.findAll();
+    public String getProductos(Model model,@RequestParam("categoria") String categoria){
+        List<Producto> listaProductos = this.productoJpaRepository.findAll();
+
+        if ( categoria == null || categoria.isEmpty() ){
+            listaProductos  = this.productoJpaRepository.findAll();
+        }else {
+            listaProductos  = this.productoJpaRepository.findAllByCategoria_nombre(categoria);
+        }
+
 	    model.addAttribute("productos", listaProductos);
         return "productos";
     }
@@ -61,7 +69,7 @@ public class HomeController {
     return "contacto";
     }
 
-    @GetMapping("productos/macetas")
+    @GetMapping("productos?categoria=macetas")
     public String getMacetas(Model model){
         List<Producto> listaProductos = this.productoJpaRepository.findAll(); //modificar por cada categoria, es decir, iterar cada producto en si, segun clasificación en base de datos
         model.addAttribute("productos", listaProductos);
@@ -75,7 +83,7 @@ public class HomeController {
 	    return "macetas";
     }
 
-    @GetMapping("productos/coffetime")
+    @GetMapping("productos?categoria=coffetime")
     public String getCoffetime(Model model){
         List<Producto> listaProductos = this.productoJpaRepository.findAll();
         model.addAttribute("productos", listaProductos);
@@ -87,7 +95,7 @@ public class HomeController {
         model.addAttribute("productos", listaProductos);
         return "coffetime";
     }
-    @GetMapping("productos/cuadros")
+    @GetMapping("productos?categoria=cuadros")
     public String getCuadros(Model model){
         List<Producto> listaProductos = this.productoJpaRepository.findAll();
         model.addAttribute("productos", listaProductos);
@@ -101,7 +109,7 @@ public class HomeController {
         return "cuadros";
     }
 
-    @GetMapping("productos/espejos")
+    @GetMapping("productos?categoria=espejos")
     public String getEspejos(Model model){
         List<Producto> listaProductos = this.productoJpaRepository.findAll();
         model.addAttribute("productos", listaProductos);
@@ -113,7 +121,7 @@ public class HomeController {
         model.addAttribute("productos", listaProductos);
         return "espejos";
     }
-    @GetMapping("productos/almohadones")
+    @GetMapping("productos?categoria=almohadones")
     public String getAlmohadones(Model model){
         List<Producto> listaProductos = this.productoJpaRepository.findAll();
         model.addAttribute("productos", listaProductos);

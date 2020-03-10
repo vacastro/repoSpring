@@ -76,12 +76,12 @@ public class HomeController {
 	    return "macetas";
     }
 
-    @GetMapping("macetas")
+    /*@GetMapping("macetas")
     public String getIndexMacetas(Model model){
         List<Producto> listaProductos = this.productoJpaRepository.findAll();
         model.addAttribute("productos", listaProductos);
 	    return "macetas";
-    }
+    }*/
 
     @GetMapping("productos?categoria=coffetime")
     public String getCoffetime(Model model){

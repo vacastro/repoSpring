@@ -28,7 +28,7 @@ public class CarritoController {
 
     @GetMapping("")
     public String show(Model model) {
-        Optional<Usuario> opt = usuarioJpaRepository.findById((Integer) 1);
+        Optional<Usuario> opt = usuarioJpaRepository.findById((Integer) 2);
 
         Usuario usuario = opt.get();
 
@@ -48,7 +48,7 @@ public class CarritoController {
     public String addProduct(@ModelAttribute Producto unProducto, RedirectAttributes redirectAttrs, @PathVariable("producto_id") Integer producto_id){
         Optional<Producto> opt1 = this.productoJpaRepository.findById(producto_id);
        Producto producto = opt1.get();
-        Optional<Usuario> opt = usuarioJpaRepository.findById((Integer)1);
+        Optional<Usuario> opt = usuarioJpaRepository.findById((Integer)2);
         Usuario usuario = opt.get();
         usuario.agregarAlCarrito(producto);
         usuarioJpaRepository.save(usuario);
@@ -61,7 +61,7 @@ public class CarritoController {
     @PostMapping("/eliminar")
     public String eliminarProducto(@ModelAttribute Producto producto, RedirectAttributes redirectAttrs) {
         redirectAttrs.addFlashAttribute("mensaje", "Eliminado correctamente");
-        Optional<Usuario> opt3 = usuarioJpaRepository.findById(1);
+        Optional<Usuario> opt3 = usuarioJpaRepository.findById(2);
         Usuario usuario = opt3.get();
 
 

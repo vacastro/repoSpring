@@ -32,7 +32,7 @@
                 </p>
                 <p>
                     <label for="email">E-Mail:</label>
-                    <input id="email" type="email"  value="" th:field="*{email}" placeholder="ejemplo: usuario@ejemplo.com" required!>
+                    <input id="email" type="email"  value="" th:field="*{email}" placeholder="Ejemplo: usuario@ejemplo.com" required!>
                     <span style="color: #ffa81c; font-size: 11px;" class="errorEmail" th:if="${#fields.hasErrors('email')}" th:errors="*{email}" ></span>
                     
                 </p>

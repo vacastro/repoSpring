@@ -52,7 +52,7 @@ public class LoginController {
 
 		if (usuarioEncontrado.getContrasenia().equals(contraseniaIngresada)) {
 			model.addAttribute("email", usuarioEncontrado.getEmail());
-			return "pagar";
+			return "pagar ";
 		} else {
 			return "login";
 		}

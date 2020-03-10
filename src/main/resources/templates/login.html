@@ -29,6 +29,15 @@
     <div class="row-login">
         <div class="formulario offset-md-3 col-md-6">
             <form id="formlogin" method="POST" th:action="@{/login}"  th:object="${usuarioLogin}">
+              
+              <div th:classappend="'alert-warning'"
+                     th:text="${mensaje}" th:if="${mensaje != null}"
+                     class="alert">
+                </div>
+              
+              
+              
+              
                 <p>
                     <label for="email">E-Mail:</label>
                     <input id="email" type="email"  value="" th:field="*{email}" placeholder="Ejemplo: usuario@ejemplo.com"  required!>

@@ -38,12 +38,7 @@ public class UsuarioController {
 		return "registro";
 	}
 
-	//@PostMapping("/registro")
-	//public String insertUsuario(Usuario usuarioARegistrar) {
-		//usuarioJpaRepository.save(usuarioARegistrar);
-		//return "index";
-	//}
-	
+
 	@PostMapping("/registro")
 	public String insertUsuario(@Valid Usuario usuario, BindingResult result) {
 	    if (result.hasErrors()) {			

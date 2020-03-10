@@ -81,7 +81,7 @@
 
 
 					<div th:each="unProducto : ${productos}" class="productcard card col-12 col-sm-6 col-md-4" style="width: 18rem;">
-						<img src="../imagenes/espejo-hp.jpg" class="card-img-top" alt="espejo harry">
+						<img th:src="${unProducto.urlImage}" class="card-img-top" alt="espejo harry">
 						<div class="card-body">
 							<h5 class="card-title" th:text="${unProducto.nombre}"></h5>
 							<p class="card-text" th:text="${unProducto.descripcion}"></p>

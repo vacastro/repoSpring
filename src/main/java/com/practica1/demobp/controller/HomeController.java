@@ -69,44 +69,15 @@ public class HomeController {
     return "contacto";
     }
 
-    @GetMapping("productos?categoria=macetas")
-    public String getMacetas(Model model){
-        List<Producto> listaProductos = this.productoJpaRepository.findAll(); //modificar por cada categoria, es decir, iterar cada producto en si, segun clasificación en base de datos
-        model.addAttribute("productos", listaProductos);
-	    return "macetas";
-    }
 
 
 
-    @GetMapping("productos?categoria=coffetime")
-    public String getCoffetime(Model model){
-        List<Producto> listaProductos = this.productoJpaRepository.findAll();
-        model.addAttribute("productos", listaProductos);
-        return "coffetime";
-    }
-
-    @GetMapping("productos?categoria=cuadros")
-    public String getCuadros(Model model){
-        List<Producto> listaProductos = this.productoJpaRepository.findAll();
-        model.addAttribute("productos", listaProductos);
-        return "cuadros";
-    }
-
+  
  
-    @GetMapping("productos?categoria=espejos")
-    public String getEspejos(Model model){
-        List<Producto> listaProductos = this.productoJpaRepository.findAll();
-        model.addAttribute("productos", listaProductos);
-        return "espejos";
-    }
+ 
 
     
-    @GetMapping("productos?categoria=almohadones")
-    public String getAlmohadones(Model model){
-        List<Producto> listaProductos = this.productoJpaRepository.findAll();
-        model.addAttribute("productos", listaProductos);
-        return "almohadones";
-    }
+  
   
 
 }

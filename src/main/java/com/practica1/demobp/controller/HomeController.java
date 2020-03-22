@@ -68,9 +68,13 @@ public class HomeController {
     public String getContacto(){
     return "contacto";
     }
+	
+	@GetMapping("pagar")
+    public String getPagar(){
+    return "pagar";
 
 
-
+	}
 
   
  
